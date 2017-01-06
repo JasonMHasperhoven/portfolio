@@ -1,0 +1,33 @@
+///////////////////
+// Media queries //
+///////////////////
+
+@mixin small-mobile {
+  @media (max-width: 359px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-big {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin pixel-ratio-double {
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}

@@ -1,0 +1,40 @@
+pre,
+code {
+  border-radius: $border-radius;
+
+  font-family: "Menlo", Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+:not(pre) > code {
+  margin: 0 $spacing-quarter;
+  padding: $spacing-quarter;
+  background: mix($color-grey-gull, #000, 90%);
+
+  color: #fff;
+}
+
+pre {
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: $spacing;
+  background: mix($color-blue, #282828, 4%);
+
+  text-align: left;
+  word-break: break-word;
+  word-spacing: normal;
+  white-space: pre;
+  white-space: pre-wrap;
+  tab-size: 4;
+  hyphens: none;
+  color: mix($color-blue, #eee, 4%);
+
+  direction: ltr;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

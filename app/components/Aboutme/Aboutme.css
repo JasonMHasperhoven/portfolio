@@ -1,0 +1,250 @@
+.aboutMe {
+  padding: 16px 16px 24px;
+  background: linear-gradient(#27172d, #1c1121);
+
+  @media (min-width: 768px) {
+    padding: 48px 32px 96px;
+  }
+}
+
+.title {
+  composes: title from '../Shared/Shared.css';
+  text-align: left;
+}
+
+.wrapper {
+  composes: wrapper from '../Shared/Shared.css';
+  z-index: 2;
+}
+
+.row {
+  composes: row from '../Shared/Shared.css';
+}
+
+.column {
+  &:first-child {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  &:last-child {
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    float: left;
+    width: 50%;
+
+    &:first-child {
+      max-width: none;
+      margin: 0;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.actionWrapper {
+  padding-top: 34px;
+}
+
+.button {
+  text-transform: uppercase;
+  font-size: 12px;
+  background: rgba(109, 27, 67, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  width: 186px;
+  border-radius: 2px;
+  letter-spacing: .06em;
+  padding: 12px;
+  display: block;
+  margin-bottom: 14px;
+  text-align: center;
+  transition: background-color .2s, border-color .2s;
+
+  &:hover {
+    background-color: rgba(109, 27, 67, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:active {
+    transition: none;
+    background-color: rgba(109, 27, 67, 0);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &Primary {
+    composes: button;
+    background-color: rgb(78, 22, 51, .8);
+
+    &:hover {
+      background-color: rgb(78, 22, 51, 1);
+    }
+  }
+}
+
+.socialMediaWrapper {
+  margin-bottom: 14px;
+}
+
+.copy {
+  font-size: 15px;
+  max-width: 464px;
+
+  @media (min-width: 768px) {
+    font-size: 17px;
+  }
+
+  &Uppercase {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .05em;
+    font-weight: 600;
+
+    @media (min-width: 768px) {
+      font-size: 15px;
+    }
+  }
+
+  &Link {
+    color: #e84ba0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: color .2s, border-color .2s;
+
+    &:hover {
+      color: #c3256c;
+      border-color: #c3256c;
+    }
+  }
+}
+
+.actionWrapper {
+  display: inline-block;
+}
+
+.followMe {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .5em;
+  text-shadow: 0 6px 8px rgba(0, 0, 0, .6);
+  margin-bottom: 0;
+  /* background: rgba(140, 28, 82, .4); */
+  padding: 16px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.socialMedia {
+  display: inline-block;
+  font-size: 13px;
+  background: rgba(109, 27, 67, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 86px;
+  border-radius: 2px;
+  padding: 12px 0 8px;
+  margin-right: 14px;
+  text-align: center;
+  transition: background-color .2s, border-color .2s;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: rgba(109, 27, 67, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:active {
+    transition: none;
+    background-color: rgba(109, 27, 67, 0);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+
+.me {
+  width: 379px;
+  height: 291px;
+  overflow: hidden;
+  width: 320px;
+  height: 260px;
+  border-radius: 3px;
+  margin: 24px auto;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    width: 379px;
+    height: 291px;
+    margin: 0;
+    right: 16.2%;
+  }
+
+  @media (min-width: 1070px) {
+    right: 23.5%;
+  }
+
+  &Mask {
+    z-index: 2;
+    width: 379px;
+    height: 291px;
+    background-image: url('./me-mask@1x.png');
+    background-size: 379px 291px;
+
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url('./me-mask@2x.png');
+    }
+  }
+
+  &Frame {
+    position: absolute;
+    top: -31px;
+    left: -28px;
+    width: 379px;
+    height: 291px;
+    background-size: 1516px 291px;
+    background-image: url('./me@1x.jpg');
+    /*opacity: 0;
+    transition: opacity .2s;
+
+    &:global(.is-active) {
+      opacity: 1;
+    }*/
+
+    @media (min-width: 768px) {
+      top: 0;
+      left: 0;
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url('./me@2x.jpg');
+    }
+  }
+
+  &Frame1 {
+    composes: meFrame;
+    background-position: 0 0;
+    box-shadow: inset 110px 0 100px rgba(31, 14, 31, .7),
+      inset -108px 0 100px rgba(31, 14, 31, .7),
+      inset 0px 36px 100px rgba(31, 14, 31, .7);
+  }
+
+  &Frame2 {
+    composes: meFrame;
+    background-position: 758px 0;
+  }
+
+  &Frame3 {
+    composes: meFrame;
+    background-position: 1516px 0;
+  }
+
+  &Frame4 {
+    composes: meFrame;
+    background-position: 2284px 0;
+  }
+}

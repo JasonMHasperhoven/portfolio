@@ -1,0 +1,6 @@
+:global(.app) {
+}
+
+:global(.app.is-loaded) {
+  opacity: 1;
+}

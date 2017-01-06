@@ -1,0 +1,16 @@
+.background {
+  &--1 {
+    background: #4b1d31;
+    // background: linear-gradient(to bottom right, #3a2344, #4b1d31);
+    // background: linear-gradient(to bottom right, #4a2a6a, #6a2559);
+    background: linear-gradient(to bottom right, #311f38, #261214);
+  }
+
+  &--2 {
+    background: linear-gradient(13deg, #010409, rgba(67, 31, 64, 0) 32%);
+  }
+
+  &--3 {
+    background: linear-gradient(200deg, #1b0f0f, rgba(73, 29, 30, 0) 32%);
+  }
+}

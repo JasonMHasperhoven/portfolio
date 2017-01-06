@@ -1,0 +1,137 @@
+.hero {
+  /*max-height: 468px;*/
+  text-align: center;
+
+  @media (min-width: 768px) {
+    min-height: 600px;
+    max-height: none;
+  }
+
+  &Table {
+    display: table;
+
+    table-layout: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &TableCell {
+    display: table-cell;
+    vertical-align: middle;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &Headline {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -.04em;
+    text-shadow: 0 14px 8px rgba(0, 0, 0, 1);
+    transition: opacity 1s, transform 1s;
+
+    opacity: 0;
+    will-change: opacity, transform;
+
+    transform: translate3d(0, -32px, 0);
+
+    &:global(.is-visible) {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (min-width: 768px) {
+      font-size: 42px;
+    }
+
+    &KerningFix {
+      display: inline-block;
+      width: 3px;
+    }
+
+    &KerningFix2 {
+      display: inline-block;
+      width: 1px;
+    }
+  }
+
+  &Subline {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -.04em;
+    transition: opacity 1s, transform 1s;
+
+    opacity: 0;
+    will-change: opacity, transform;
+
+    transform: translate3d(0, -32px, 0);
+    text-shadow: 0 14px 8px rgba(0, 0, 0, 1);
+
+    &:global(.is-visible) {
+      opacity: .7;
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundCover {
+  composes: background;
+  background: url('./hero-bg.jpg');
+  background-size: cover;
+  opacity: .5;
+}
+
+.backgroundGradient {
+  composes: background;
+  background: rgba(0, 0, 0, .2);
+  background: linear-gradient(to top, #1d0916, rgba(0, 0, 0, .2) 15%);
+  background: linear-gradient(to top, #030205, rgba(0, 0, 0, .2) 15%);
+}
+
+.heroAction {
+  border: 0;
+  padding: 16px;
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  width: 100%;
+  outline: 0;
+  color: #fff;
+  transition: opacity 1s, transform 1s;
+
+  opacity: 0;
+  will-change: opacity, transform;
+
+  transform: translate3d(0, -32px, 0);
+
+  &:global(.is-visible) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &Icon {
+    width: 20px;
+    height: 13px;
+    transform: scale(.8);
+    transition: transform .2s;
+  }
+
+  &:hover .heroActionIcon {
+    transform: scale(1);
+  }
+}

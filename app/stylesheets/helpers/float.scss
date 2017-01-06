@@ -1,0 +1,28 @@
+///////////
+// Float //
+///////////
+
+.float {
+  &--left {
+    float: left !important;
+  }
+
+  &--right {
+    float: right !important;
+  }
+}
+
+.float--clear {
+  *zoom: 1;
+
+  &:after,
+  &:before {
+    display: table;
+
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+}

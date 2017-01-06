@@ -1,0 +1,12 @@
+.app {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  background: #1d0916;
+  background: #030205;
+
+  &.is-loaded {
+    opacity: 1;
+  }
+}
