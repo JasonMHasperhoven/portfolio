@@ -22,8 +22,9 @@ module.exports = {
         loaders: [
           'style-loader',
           `css-loader?${JSON.stringify({
+            importLoaders: 1,
             modules: true,
-            localIdentName: DEV ? '[name]-[local]-[hash:base64:5]' : '[hash:base64:5]',
+            localIdentName: DEV ? '[name]__[local]___[hash:base64:5]' : '[hash:base64:5]',
             minimize: !DEV,
           })}`,
           'postcss-loader?pack=default',

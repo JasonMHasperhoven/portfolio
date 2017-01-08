@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App.js';
+import App from './components/App/App';
+import mh from './helpers/mh';
 import * as s from './stylesheets/app.scss';
-import mh from './components/mh';
-
-ReactDOM.render(<App />, document.querySelector('.js-app'));
 
 mh.init();
+
+ReactDOM.render(<App />, mh.appElement);

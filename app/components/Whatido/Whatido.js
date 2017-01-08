@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Whatido.css';
-import mh from '../mh';
+import mh from '../../helpers/mh';
 
 class Whatido extends React.Component {
   constructor() {

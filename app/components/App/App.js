@@ -1,25 +1,29 @@
 import React from 'react';
-import Hero from '../Hero/Hero.js';
-import Whatido from '../Whatido/Whatido.js';
-import Aboutme from '../Aboutme/Aboutme.js';
-import Footer from '../Footer/Footer.js';
-import mh from '../mh.js';
-import s from './App.css';
+import Hero from '../Hero/Hero';
+import Whatido from '../Whatido/Whatido';
+import Aboutme from '../Aboutme/Aboutme';
+import Footer from '../Footer/Footer';
+import mh from '../../helpers/mh';
 
 class App extends React.Component {
   componentDidMount() {
     mh.windowLoad.push(() => {
-      // window.setTimeout(() => {
-        document.querySelector('.js-loader').classList.add('is-faded-out');
-        document.querySelector('.js-app').classList.add('is-loaded');
-      // }, 700);
+      mh.appElement.classList.remove('is-hidden');
+
+      window.setTimeout(() => {
+      // window.requestAnimationFrame(() => {
+        mh.appElement.classList.add('is-loaded');
+        mh.loaderElement.classList.add('is-faded-out');
+        this.refs.hero.animateIn();
+      // });
+      }, 200);
     });
   }
 
   render() {
     return (
-      <div className={s.app}>
-        <Hero />
+      <div>
+        <Hero ref="hero" />
         <Whatido />
         <Aboutme />
         <Footer />

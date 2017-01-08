@@ -2,10 +2,10 @@
   display: table;
 
   table-layout: fixed;
+  transition: opacity 1s ease-out;
 
   &.is-faded-out {
     opacity: 0;
-    transition: opacity 1s ease-out;
   }
 
   &__table-cell {

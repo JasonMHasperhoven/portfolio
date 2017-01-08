@@ -1,14 +1,18 @@
+import * as requestAnimationFrame from './requestAnimationFrame.js';
+
 class Mh {
   constructor() {
-    this.windowScroll = [];
-    this.windowLoad = [];
+    this.appElement    = document.querySelector('.js-app');
+    this.loaderElement = document.querySelector('.js-loader');
+    this.windowScroll  = [];
+    this.windowLoad    = [];
   }
 
   init() {
     window.onload = () => {
       window.setTimeout(() => {
         this.windowLoad.forEach((block) => { return block(); });
-      }, 200);
+      }, 700);
 
       window.onscroll = () => {
         this.windowScroll.forEach((block) => { return block(); });
