@@ -1,0 +1,35 @@
+@import "helpers/media-queries";
+@import "helpers/variables";
+
+.grid {
+
+}
+
+.area {
+  float: left;
+  height: 142px;
+  margin-right: $spacing / 4;
+  margin-bottom: $spacing * 1.5;
+
+  @include media-md {
+    height: 164px;
+  }
+
+  &Single {
+    composes: area;
+    width: 142px;
+
+    @include media-md {
+      width: 164px;
+    }
+  }
+
+  &Double {
+    composes: area;
+    width: 288px;
+
+    @include media-md {
+      width: 332px;
+    }
+  }
+}

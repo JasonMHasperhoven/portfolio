@@ -1,0 +1,50 @@
+.selfie {
+  display: none;
+  width: 379px;
+  height: 291px;
+  overflow: hidden;
+  border-radius: 3px;
+
+  &Frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 379px;
+    height: 291px;
+    background-size: 1516px 291px;
+    background-image: url('./me@1x.jpg');
+    box-shadow: inset 110px 0 100px rgba(31, 14, 31, .7),
+      inset -108px 0 100px rgba(31, 14, 31, .7),
+      inset 0px 36px 100px rgba(31, 14, 31, .7);
+    opacity: 0;
+    transition: opacity .5s;
+
+    &:global(.is-visible) {
+      opacity: 1;
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url('./me@2x.jpg');
+    }
+  }
+
+  &1 {
+    composes: selfieFrame;
+    background-position: 379px 0;
+  }
+
+  &2 {
+    composes: selfieFrame;
+    background-position: 758px 0;
+  }
+
+  &3 {
+    composes: selfieFrame;
+    background-position: 1137px 0;
+  }
+
+  &4 {
+    composes: selfieFrame;
+    background-position: 0 0;
+  }
+}

@@ -1,0 +1,173 @@
+@import "helpers/media-queries";
+@import "helpers/variables";
+
+.code {
+  padding: 0;
+  background: linear-gradient(#27172d, #2d1726);
+
+  @include media-sm {
+    padding: 0 $spacing;
+  }
+
+  @include media-md {
+    padding: ($spacing * 3) $spacing;
+  }
+
+  @include media-lg {
+    padding: ($spacing * 4) ($spacing * 1.5);
+  }
+}
+
+.colorFunction {
+  overflow: hidden;
+
+  &Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 142px;
+    height: 142px;
+    background-image: url('./color@1x.png');
+    background-size: 142px;
+
+    @include media-md {
+      width: 164px;
+      height: 164px;
+      background-size: 164px;
+    }
+
+    @include media-pixel-ratio-double {
+      background-image: url('./color@2x.png');
+    }
+  }
+
+  &:hover {
+    .colorFunctionWrapper {
+      opacity: 1;
+    }
+  }
+
+  &Wrapper {
+    width: 142px;
+    height: 142px;
+    opacity: 0;
+    padding: $spacing * .75;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(43, 48, 59, .8);
+    transition: opacity .5s;
+
+    @include media-md {
+      width: 164px;
+      height: 164px;
+      font-size: 13px;
+    }
+  }
+
+  &Title {
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #cc656e;
+    text-decoration: underline;
+
+    @include media-md {
+      font-size: 16px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &Icon {
+    width: 14px;
+    height: 14px;
+    position: relative;
+    top: 2px;
+
+    @include media-md {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.multiModal {
+  overflow: hidden;
+
+  &Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 288px;
+    height: 142px;
+    background-image: url('./multi-modal@1x.png');
+    background-size: 288px 142px;
+
+    @include media-md {
+      width: 332px;
+      height: 164px;
+      background-size: 332px 164px;
+    }
+
+    @include media-pixel-ratio-double {
+      background-image: url('./multi-modal@2x.png');
+    }
+  }
+
+  &:hover {
+    .multiModalWrapper {
+      opacity: 1;
+    }
+  }
+
+  &Wrapper {
+    width: 288px;
+    height: 142px;
+    opacity: 0;
+    padding: $spacing * .75;
+    color: #fff;
+    font-size: 13px;
+    background: rgba(4, 49, 34, .9);
+    transition: opacity .5s;
+
+    @include media-md {
+      width: 332px;
+      height: 164px;
+      font-size: 14px;
+    }
+  }
+
+  &Title {
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #19c587;
+    text-decoration: underline;
+
+    @include media-md {
+      font-size: 16px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &Icon {
+    width: 14px;
+    height: 14px;
+    position: relative;
+    top: 2px;
+
+    @include media-md {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}

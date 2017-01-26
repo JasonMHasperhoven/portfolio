@@ -1,0 +1,167 @@
+html {
+  position: relative;
+
+  box-sizing: border-box;
+  min-height: 100%;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: #040205;
+  background: #1d0916;
+
+  color: #fff;
+
+  &:before {
+    display: none;
+
+    @include mobile {
+      content: "mobile";
+    }
+    @include desktop {
+      content: "desktop";
+    }
+  }
+}
+
+html,
+input,
+textarea,
+button {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+          font-smoothing: antialiased;
+
+  @include desktop {
+    font-size: 16px;
+  }
+}
+
+article,
+aside,
+footer,
+header,
+main,
+nav,
+section,
+textarea {
+  display: block;
+}
+
+div,
+main,
+section,
+footer,
+form {
+  position: relative;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  background-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  &, &:active, &:visited, &:hover {
+    text-decoration: none;
+
+    cursor: pointer;
+  }
+}
+
+label {
+  display: inline-block;
+
+  cursor: pointer;
+  transition: all $transition-time;
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+th {
+  text-align: left;
+}
+
+img {
+  box-sizing: content-box;
+  border: 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+em {
+  font-weight: 600;
+  font-style: normal;
+}
+
+strong {
+  font-weight: 700;
+}

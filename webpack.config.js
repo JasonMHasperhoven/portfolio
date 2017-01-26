@@ -6,7 +6,7 @@ var DEV = process.argv.indexOf('--dev') > -1;
 
 module.exports = {
   entry: {
-    'app': './app/index.js'
+    'app': './app/app.js'
   },
   context: __dirname,
   output: {
@@ -22,12 +22,13 @@ module.exports = {
         loaders: [
           'style-loader',
           `css-loader?${JSON.stringify({
-            importLoaders: 1,
+            importLoaders: 2,
             modules: true,
             localIdentName: DEV ? '[name]__[local]___[hash:base64:5]' : '[hash:base64:5]',
             minimize: !DEV,
           })}`,
           'postcss-loader?pack=default',
+          'sass-loader'
         ],
       },
       {
@@ -44,7 +45,8 @@ module.exports = {
           cacheDirectory: DEV,
           babelrc: false,
           presets: [
-            'es2015',
+            'latest',
+            'stage-0',
             'react',
             ...DEV ? [] : [
               'react-optimize',
@@ -71,6 +73,9 @@ module.exports = {
         require('autoprefixer')(),
       ],
     };
+  },
+  sassLoader: {
+    includePaths: [path.join(__dirname, 'app')]
   },
   resolve: {
     root: path.join(__dirname, 'app'),

@@ -1,0 +1,145 @@
+@import "helpers/media-queries";
+
+.hero {
+  text-align: center;
+
+  @include media-md {
+    min-height: 600px;
+    max-height: none;
+  }
+}
+
+.table {
+  display: table;
+
+  table-layout: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &Cell {
+    display: table-cell;
+    vertical-align: middle;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.headline {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -.04em;
+  text-shadow: 0 14px 8px rgba(0, 0, 0, 1);
+  transition: opacity 1s, transform 1s;
+
+  opacity: 0;
+  will-change: opacity, transform;
+
+  transform: translate3d(0, -32px, 0);
+
+  &:global(.is-visible) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @include media-md {
+    font-size: 42px;
+  }
+
+  &KerningFixMartijn {
+    display: inline-block;
+    width: 3px;
+  }
+
+  &KerningFixHasperhoven {
+    display: inline-block;
+    width: 1px;
+  }
+}
+
+.subline {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -.04em;
+  transition: opacity 1s, transform 1s;
+
+  opacity: 0;
+  will-change: opacity, transform;
+
+  transform: translate3d(0, -32px, 0);
+  text-shadow: 0 14px 8px rgba(0, 0, 0, 1);
+
+  &:global(.is-visible) {
+    opacity: .7;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @include media-md {
+    font-size: 32px;
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &Cover {
+    composes: background;
+    background: url('./hero-bg.jpg');
+    background-size: cover;
+    opacity: .5;
+  }
+
+  &Gradient {
+    composes: background;
+    background: linear-gradient(to top, #030205, transparent 20%);
+  }
+}
+
+.action {
+  border: 0;
+  padding: 16px;
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  width: 100%;
+  outline: 0;
+  color: #fff;
+  transition: opacity 1s, transform 1s;
+
+  opacity: 0;
+  will-change: opacity, transform;
+
+  transform: translate3d(0, -32px, 0);
+
+  &:global(.is-visible) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &Copy {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  &Icon {
+    width: 20px;
+    height: 13px;
+    transform: scale(.8);
+    transition: transform .2s;
+  }
+
+  &:hover .actionIcon {
+    transform: scale(1);
+  }
+}
