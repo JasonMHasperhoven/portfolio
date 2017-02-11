@@ -3,7 +3,7 @@
 
 .code {
   padding: 0;
-  background: linear-gradient(#27172d, #2d1726);
+  /*background: linear-gradient(#27172d, #2d1726);*/
 
   @include media-sm {
     padding: 0 $spacing;

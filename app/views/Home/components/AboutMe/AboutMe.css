@@ -5,7 +5,8 @@
   padding: 0;
   margin-bottom: -110px;
   /*background: linear-gradient(#030205, #27172d);*/
-  background: linear-gradient(#030205, #120b16);
+  /*background: linear-gradient(#030205, #120b16);*/
+  background: linear-gradient(#030205, transparent);
 
   @include media-sm {
     padding: 0 $spacing;

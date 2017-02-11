@@ -90,6 +90,40 @@ const Design = () => {
       colSpan: 1
     },
     {
+      id: 'Typography',
+      colSpan: 1,
+      attributes: {
+        'data-fade-delay-desktop': 150
+      },
+      content: (
+        <Card className={s.cardTypography}>
+          <div className={s.cardTypographyImage} />
+        </Card>
+      )
+    },
+    {
+      id: 'space2',
+      colSpan: 1
+    },
+    {
+      id: 'space3',
+      colSpan: 1
+    },
+    {
+      id: 'checkout',
+      colSpan: 1,
+      attributes: {
+        'data-fade-delay-desktop': 0
+      },
+      content: (
+        <Card className={s.cardCheckout}>
+          <div className={s.cardCheckoutWrapper}>
+            <div className={s.cardCheckoutImage} />
+          </div>
+        </Card>
+      )
+    },
+    {
       id: 'dropdown',
       colSpan: 2,
       attributes: {
@@ -119,33 +153,16 @@ const Design = () => {
       )
     },
     {
-      id: 'space2',
+      id: 'space4',
       colSpan: 1
     },
     {
-      id: 'checkout',
+      id: 'transaction',
       colSpan: 1,
-      attributes: {
-        'data-fade-delay-desktop': 0
-      },
       content: (
-        <Card className={s.cardCheckout}>
-          <div className={s.cardCheckoutWrapper}>
-            <div className={s.cardCheckoutImage} />
-          </div>
-        </Card>
-      )
-    },
-    {
-      id: 'Typography',
-      colSpan: 1,
-      attributes: {
-        'data-fade-delay-desktop': 150
-      },
-      content: (
-        <Card className={s.cardTypography}>
-          <div className={s.cardTypographyImage} />
-        </Card>
+        <a className="js-overlay-toggle" data-overlay-id="transaction">
+          Toggle overlay
+        </a>
       )
     }
   ];

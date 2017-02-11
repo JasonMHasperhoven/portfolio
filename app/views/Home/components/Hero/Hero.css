@@ -1,7 +1,17 @@
 @import "helpers/media-queries";
 
+:global(.is-loaded) {
+  .hero {
+    opacity: 1;
+  }
+}
+
 .hero {
+  position: relative;
   text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  will-change: opacity;
 
   @include media-md {
     min-height: 600px;

@@ -1,13 +1,11 @@
-.is-loaded .app {
-  opacity: 1;
-}
+// .is-loaded .app {
+//   // opacity: 1;
+// }
 
 .app {
   position: relative;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 1s ease-out;
-  will-change: opacity;
-  background: #1d0916;
-  background: #030205;
+  // z-index: 2;
+  // opacity: 0;
+  // background: #1d0916;
+  // background: #030205;
 }

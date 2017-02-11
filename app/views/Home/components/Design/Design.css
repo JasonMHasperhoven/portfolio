@@ -4,7 +4,7 @@
 .design {
   padding: 0;
   /*background: linear-gradient(#030205, #27172d);*/
-  background: linear-gradient(#120b16, #27172d);
+  /*background: linear-gradient(#120b16, #27172d);*/
 
   @include media-sm {
     padding: 0 $spacing;

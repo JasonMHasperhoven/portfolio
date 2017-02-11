@@ -2,6 +2,7 @@
 @import "helpers/variables";
 
 .section {
+  position: relative;
   margin: 0 auto;
   padding: ($spacing * 1.5) 0;
 
