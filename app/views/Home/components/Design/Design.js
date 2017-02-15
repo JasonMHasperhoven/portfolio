@@ -2,9 +2,11 @@ import React from 'react';
 import Section from 'components/Section';
 import Grid from 'components/Grid';
 import Card from 'components/Card';
+import IconForward from 'components/Icons/Forward';
 import DropdownMenu from './components/DropdownMenu';
 import Dropdown from './components/Dropdown';
 import s from './Design.css';
+import sGrid from 'components/Grid/Grid.css';
 
 const Design = () => {
   const title = 'Design';
@@ -36,8 +38,8 @@ const Design = () => {
   const grid = [
     {
       id: 'spinner',
-      colSpan: 1,
       attributes: {
+        className: sGrid.areaSingle,
         'data-fade-delay-desktop': 0
       },
       content: (
@@ -61,8 +63,8 @@ const Design = () => {
     },
     {
       id: 'dropdown-menu',
-      colSpan: 2,
       attributes: {
+        className: sGrid.areaDouble,
         style: { zIndex: 2 },
         'data-fade-delay-desktop': 150
       },
@@ -87,13 +89,15 @@ const Design = () => {
     },
     {
       id: 'space1',
-      colSpan: 1
+      attributes: {
+        className: sGrid.areaSingle
+      }
     },
     {
       id: 'Typography',
-      colSpan: 1,
       attributes: {
-        'data-fade-delay-desktop': 150
+        className: sGrid.areaSingle,
+        'data-fade-delay-desktop': 300
       },
       content: (
         <Card className={s.cardTypography}>
@@ -103,16 +107,20 @@ const Design = () => {
     },
     {
       id: 'space2',
-      colSpan: 1
+      attributes: {
+        className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
+      }
     },
     {
       id: 'space3',
-      colSpan: 1
+      attributes: {
+        className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
+      }
     },
     {
       id: 'checkout',
-      colSpan: 1,
       attributes: {
+        className: sGrid.areaSingle,
         'data-fade-delay-desktop': 0
       },
       content: (
@@ -125,10 +133,10 @@ const Design = () => {
     },
     {
       id: 'dropdown',
-      colSpan: 2,
       attributes: {
+        className: sGrid.areaDouble,
         style: { zIndex: 1 },
-        'data-fade-delay-desktop': 300
+        'data-fade-delay-desktop': 150
       },
       content: (
         <Card className={s.cardDropdown} colSpan={2}>
@@ -154,15 +162,26 @@ const Design = () => {
     },
     {
       id: 'space4',
-      colSpan: 1
+      attributes: {
+        className: sGrid.areaSingle
+      }
     },
     {
       id: 'transaction',
-      colSpan: 1,
+      attributes: {
+        className: sGrid.areaSingle,
+        'data-fade-delay-desktop': 300
+      },
       content: (
-        <a className="js-overlay-toggle" data-overlay-id="transaction">
-          Toggle overlay
-        </a>
+        <Card className={s.cardTransaction}>
+          <a className={`${s.cardTransactionImage} js-overlay-toggle`} data-overlay-id="transaction">
+            <div className={s.cardTransactionMask}>
+              <div className={s.cardTransactionAction}>
+                <IconForward attributes={{ className: s.cardTransactionIcon }} />
+              </div>
+            </div>
+          </a>
+        </Card>
       )
     }
   ];

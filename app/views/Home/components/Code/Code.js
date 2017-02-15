@@ -2,18 +2,21 @@ import React from 'react';
 import Section from 'components/Section';
 import Grid from 'components/Grid';
 import Card from 'components/Card';
-import IconGithub from '../AboutMe/components/IconGithub';
+import IconGithub from 'components/Icons/Github';
 import s from './Code.css';
+import sGrid from 'components/Grid/Grid.css';
 
 const Code = () => {
   const title = 'Code';
 
   const description = (
     <p>
-      My area of expertise is producing HTML, CSS and Javascript. I work on making
-      ui components functional &mdash; using cutting-edge technologies &mdash;
-      for all browsers and devices. I love software architecture and am very
-      particular about performance and code quality.
+      I often <em>really</em> want to understand how things work, so coding perfectly suits me.
+      My <a href="https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator"
+      target="_blank" rel="noopener noreferrer">INTJ</a> personality type is as such that, it
+      makes me suited for intensive intellectual labor, intellectual challenges and creative approaches.
+      I work on making ui components functional &mdash; using cutting-edge technologies &mdash; for all browsers and devices.
+      I love thinking about architecture, extendability and am very particular about performance and code quality.
     </p>
   );
 
@@ -43,40 +46,42 @@ const Code = () => {
   const grid = [
     {
       id: 'colorFunction',
-      colSpan: 1,
+      attributes: {
+        className: sGrid.areaSingle
+      },
       content: (
         <Card className={s.colorFunction}>
           <div className={s.colorFunctionImage} />
-          <div className={s.colorFunctionWrapper}>
-            <a href="https://github.com/JasonMHasperhoven/sass-scss-function-color-weight"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={s.colorFunctionTitle}>
+          <a href="https://github.com/JasonMHasperhoven/sass-scss-function-color-weight"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={s.colorFunctionWrapper}>
+            <div className={s.colorFunctionTitle}>
               <IconGithub attributes={{ className: s.colorFunctionIcon }} /> scss-color-weight
-            </a>
+            </div>
             <div className={s.colorFunctionDesc}>
               A SCSS Function which makes a color lighter or darker depending on the weight.
             </div>
-          </div>
+          </a>
         </Card>
       )
     },
     {
       id: 'multiModal',
-      colSpan: 2,
       attributes: {
+        className: sGrid.areaDouble,
         'data-fade-delay-desktop': 150
       },
       content: (
         <Card colSpan={2} className={s.multiModal}>
           <div className={s.multiModalImage} />
-          <div className={s.multiModalWrapper}>
-            <a href="https://github.com/JasonMHasperhoven/MultiModal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={s.multiModalTitle}>
+          <a href="https://github.com/JasonMHasperhoven/MultiModal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={s.multiModalWrapper}>
+            <div className={s.multiModalTitle}>
               <IconGithub attributes={{ className: s.multiModalIcon }} /> MultiModal
-            </a>
+            </div>
             <div className={s.multiModalDesc}>
               <p>
                 A typescript/javascript library which supports multiple modals, is mobile friendly and has fancy animations.
@@ -85,28 +90,42 @@ const Code = () => {
                 Built with #GSAP
               </p>
             </div>
-          </div>
+          </a>
         </Card>
       )
     },
     {
       id: 'one',
-      colSpan: 1,
       attributes: {
+        className: sGrid.areaSingle,
         'data-fade-delay-desktop': 300
       },
       content: (
-        <Card />
+        <Card className={s.railsModal}>
+          <div className={s.railsModalImage} />
+          <a href="https://github.com/JasonMHasperhoven/rails-modal-component"
+            target="_blank"
+            rel="noopener noreferrer" className={s.railsModalWrapper}>
+            <div className={s.railsModalTitle}>
+              <IconGithub attributes={{ className: s.railsModalIcon }} /> rails-modal-component
+            </div>
+            <div className={s.railsModalDesc}>
+              A modal component for Ruby on Rails, to open up a confirm dialog.
+            </div>
+          </a>
+        </Card>
       )
     },
     {
       id: 'space1',
-      colSpan: 1
+      attributes: {
+        className: sGrid.areaSingle
+      }
     },
     {
       id: 'two',
-      colSpan: 1,
       attributes: {
+        className: sGrid.areaSingle,
         'data-fade-delay-desktop': 450
       },
       content: (
@@ -116,19 +135,36 @@ const Code = () => {
     // row
     {
       id: 'space2',
-      colSpan: 1
+      attributes: {
+        className: sGrid.areaSingle
+      }
     },
     {
       id: 'three',
-      colSpan: 1,
+      attributes: {
+        className: sGrid.areaSingle
+      },
       content: (
-        <Card />
+        <Card className={s.railsDropdownMenu}>
+          <div className={s.railsDropdownMenuImage} />
+          <a href="https://github.com/JasonMHasperhoven/rails-dropdown-menu-component"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={s.railsDropdownMenuWrapper}>
+            <div className={s.railsDropdownMenuTitle}>
+              <IconGithub attributes={{ className: s.railsDropdownMenuIcon }} /> rails-dropdown-menu-component
+            </div>
+            <div className={s.railsDropdownMenuDesc}>
+              A dropdown menu component for Ruby on Rails.
+            </div>
+          </a>
+        </Card>
       )
     },
     {
       id: 'four',
-      colSpan: 1,
       attributes: {
+        className: sGrid.areaSingle,
         'data-fade-delay-desktop': 150
       },
       content: (
@@ -137,12 +173,14 @@ const Code = () => {
     },
     {
       id: 'space3',
-      colSpan: 1
+      attributes: {
+        className: sGrid.areaSingle
+      }
     },
     {
       id: 'siz',
-      colSpan: 1,
       attributes: {
+        className: sGrid.areaSingle,
         'data-fade-delay-desktop': 300
       },
       content: (

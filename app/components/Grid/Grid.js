@@ -15,11 +15,10 @@ class Grid extends React.Component {
     return (
       <div className={s.grid}>
         {this.props.grid.map(area => (
-          <div className={area.colSpan === 2 ? s.areaDouble : s.areaSingle}
-            key={area.id}
+          <div key={area.id}
             {...area.content ? Object.assign({
               ref: area.id
-            }, area.attributes) : {}}>
+            }, area.attributes) : area.attributes}>
             {area.content}
           </div>
         ))}

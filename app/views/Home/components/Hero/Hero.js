@@ -1,6 +1,6 @@
 import React from 'react';
 import smoothScroll from 'smooth-scroll';
-import IconAngleDown from './components/IconAngleDown';
+import IconAngleDown from 'components/Icons/AngleDown';
 import { windowScroll } from 'helpers/globalEvents';
 import s from './Hero.css';
 
@@ -53,7 +53,7 @@ class Hero extends React.Component {
           </div>
         </div>
         <a data-scroll href="#aboutme" className={s.action} ref="arrowDown" data-fade-delay="900">
-          <IconAngleDown className={s.actionIcon} />
+          <IconAngleDown attributes={{ className: s.actionIcon }} />
         </a>
       </div>
     );

@@ -18,8 +18,15 @@
   }
 }
 
-.colorFunction {
+.githubRepo {
+  position: relative;
   overflow: hidden;
+
+  &:hover {
+    .githubRepoWrapper {
+      opacity: 1;
+    }
+  }
 
   &Image {
     position: absolute;
@@ -27,7 +34,6 @@
     left: 0;
     width: 142px;
     height: 142px;
-    background-image: url('./color@1x.png');
     background-size: 142px;
 
     @include media-md {
@@ -35,26 +41,18 @@
       height: 164px;
       background-size: 164px;
     }
-
-    @include media-pixel-ratio-double {
-      background-image: url('./color@2x.png');
-    }
-  }
-
-  &:hover {
-    .colorFunctionWrapper {
-      opacity: 1;
-    }
   }
 
   &Wrapper {
+    display: block;
+    position: relative;
+    z-index: 1;
     width: 142px;
     height: 142px;
     opacity: 0;
     padding: $spacing * .75;
     color: #fff;
     font-size: 12px;
-    background: rgba(43, 48, 59, .8);
     transition: opacity .5s;
 
     @include media-md {
@@ -68,7 +66,6 @@
     display: inline-block;
     font-size: 14px;
     margin-bottom: 6px;
-    color: #cc656e;
     text-decoration: underline;
 
     @include media-md {
@@ -95,79 +92,122 @@
   }
 }
 
-.multiModal {
-  overflow: hidden;
+.colorFunction {
+  composes: githubRepo;
 
   &Image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 288px;
-    height: 142px;
-    background-image: url('./multi-modal@1x.png');
-    background-size: 288px 142px;
-
-    @include media-md {
-      width: 332px;
-      height: 164px;
-      background-size: 332px 164px;
-    }
+    composes: githubRepoImage;
+    background-image: url('./assets/color@1x.png');
 
     @include media-pixel-ratio-double {
-      background-image: url('./multi-modal@2x.png');
-    }
-  }
-
-  &:hover {
-    .multiModalWrapper {
-      opacity: 1;
+      background-image: url('./assets/color@2x.png');
     }
   }
 
   &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, .8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #cc656e;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.multiModal {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
     width: 288px;
-    height: 142px;
-    opacity: 0;
-    padding: $spacing * .75;
-    color: #fff;
-    font-size: 13px;
-    background: rgba(4, 49, 34, .9);
-    transition: opacity .5s;
+    background-image: url('./assets/multi-modal@1x.png');
+    background-size: 288px 142px;
 
     @include media-md {
       width: 332px;
-      height: 164px;
-      font-size: 14px;
+      background-size: 332px 164px;
+    }
+
+    @include media-pixel-ratio-double {
+      background-image: url('./assets/multi-modal@2x.png');
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    width: 288px;
+    background: rgba(4, 49, 34, .9);
+
+    @include media-md {
+      width: 332px;
     }
   }
 
   &Title {
-    display: inline-block;
-    font-size: 15px;
-    margin-bottom: 6px;
+    composes: githubRepoTitle;
     color: #19c587;
-    text-decoration: underline;
-
-    @include media-md {
-      font-size: 16px;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   &Icon {
-    width: 14px;
-    height: 14px;
-    position: relative;
-    top: 2px;
+    composes: githubRepoIcon;
+  }
+}
 
-    @include media-md {
-      width: 16px;
-      height: 16px;
-      position: relative;
-      top: 3px;
+.railsModal {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url('./assets/rails-modal@1x.png');
+
+    @include media-pixel-ratio-double {
+      background-image: url('./assets/rails-modal@2x.png');
     }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, .8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #00d1c1;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.railsDropdownMenu {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url('./assets/dropdown-menu@1x.png');
+
+    @include media-pixel-ratio-double {
+      background-image: url('./assets/dropdown-menu@2x.png');
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, .8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #00d1c1;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
   }
 }

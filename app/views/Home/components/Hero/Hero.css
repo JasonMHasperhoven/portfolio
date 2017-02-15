@@ -101,7 +101,7 @@
 
   &Cover {
     composes: background;
-    background: url('./hero-bg.jpg');
+    background: url('./assets/hero-bg.jpg');
     background-size: cover;
     opacity: .5;
   }

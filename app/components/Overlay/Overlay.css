@@ -5,15 +5,76 @@
   display: none;
   z-index: 9;
   position: fixed;
-  overflow-y: auto;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /*transform: translateX(-100%);*/
-  /*background: linear-gradient(135deg, #512452, #691933);*/
-  background: #120b16;
+
+  &WillChange {
+    display: block;
+
+    .wrapper {
+      will-change: opacity;
+    }
+
+    .contentWrapper {
+      will-change: transform;
+    }
+
+    .close {
+      will-change: opacity;
+    }
+  }
+
+  &Active {
+    composes: overlay;
+
+    .wrapper {
+      opacity: 1;
+      transition: opacity .75s ease;
+    }
+
+    .contentWrapper {
+      transform: translate3d(0, 0, 0);
+      transition: transform .75s ease;
+    }
+
+    .close {
+      opacity: .7;
+      transition: opacity .5s ease .75s;
+    }
+  }
+
+  &Closing {
+    composes: overlay;
+
+    .wrapper {
+      opacity: 0;
+      transition: opacity .75s ease;
+    }
+
+    .contentWrapper {
+      transform: translate3d(0, 100%, 0);
+      transition: transform .75s ease;
+    }
+
+    .close {
+      opacity: 0;
+      transition: opacity .25s;
+    }
+  }
+}
+
+.contentWrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  transform: translate3d(0, 25%, 0);
+}
+
+.wrapper {
+  background: linear-gradient(135deg, #512452, #691933);
   opacity: 0;
+
   padding: $spacing;
 
   @include media-md {
@@ -23,78 +84,11 @@
   @include media-lg {
     padding: $spacing * 3;
   }
-
-  &Active {
-    composes: overlay;
-    transform: translateX(0);
-    opacity: 1;
-    transition: transform .75s, opacity .75s;
-
-    .background {
-      opacity: 1;
-      transform: translateX(0);
-      transition: opacity .75s ease .3s, transform .75s ease .3s;
-    }
-
-    .wrapper {
-      opacity: 1;
-      transform: translateX(0);
-      transition: opacity .75s ease .6s, transform .75s ease .6s;
-    }
-
-    .close {
-      opacity: .7;
-      transition: opacity .5s ease 1.5s;
-
-      &:hover {
-        transition: opacity .2s;
-      }
-    }
-  }
-
-  &Closing {
-    composes: overlay;
-    transform: translateX(100%);
-    transition: opacity .5s ease .75s, transform .5s ease .75s;
-
-    .background {
-      opacity: 0;
-      transform: translateX(100%);
-      transition: opacity .5s ease .5s, transform .5s ease .5s;
-    }
-
-    .wrapper {
-      opacity: 0;
-      transform: translateX(100%);
-      /*transition: opacity .5s, transform .5s;*/
-      transition: opacity .25s ease .25s, transform .25s ease .25s;
-    }
-
-    .close {
-      opacity: 0;
-      transition: opacity .5s;
-
-      &:hover {
-        transition: opacity .2s;
-      }
-    }
-  }
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-100%);
-  background: linear-gradient(135deg, #512452, #691933);
-  /*transition: opacity .5s, transform .5s;*/
-  opacity: 0;
 }
 
 .close {
   display: block;
+  z-index: 1;
   position: absolute;
   top: $spacing;
   right: $spacing;
@@ -107,11 +101,13 @@
   font-size: 24px;
   font-weight: 400;
   opacity: 0;
-  /*transition: opacity .1s;*/
 
   &:hover {
     opacity: 1;
-    /*transition: opacity .1s;*/
+  }
+
+  &Active {
+    transition: opacity .2s !important;
   }
 
   @include media-md {
@@ -124,14 +120,6 @@
   }
 }
 
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  transform: translateX(-25%);
-  opacity: 0;
-  /*transition: opacity .5s, transform .5s;*/
-}
-
 .title {
   composes: title from '../Section/Section.css';
 }
@@ -139,6 +127,19 @@
 .card {
   min-height: 620px;
   background: #e9d3ea;
+  background: #fef3ff;
   border-radius: 2px;
   box-shadow: 0 16px 32px -14px rgba(0, 0, 0, .6);
+  color: #5f4954;
+
+  padding: $spacing;
+
+  @include media-md {
+    padding: $spacing * 2;
+  }
+
+  @include media-lg {
+    padding: $spacing * 3;
+    font-size: 18px;
+  }
 }

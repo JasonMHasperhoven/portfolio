@@ -6,7 +6,7 @@ import Design from './components/Design';
 import Code from './components/Code';
 // import Misc from './components/Misc';
 import Footer from 'components/Footer';
-import Overlay from 'components/Overlay';
+import OverlayTransaction from './components/OverlayTransaction';
 
 import { windowLoad, windowBeforeUnload } from 'helpers/globalEvents';
 
@@ -29,7 +29,7 @@ class Home extends React.Component {
         <Design />
         <Code />
         <Footer />
-        <Overlay id="transaction" />
+        <OverlayTransaction />
       </div>
     );
   }

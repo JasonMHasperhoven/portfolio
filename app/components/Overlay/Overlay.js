@@ -1,13 +1,17 @@
 import React from 'react';
 import s from './Overlay.css';
+import * as onTransitionEnd from 'helpers/transitionEnd';
 
 class Section extends React.Component {
   constructor() {
     super();
 
     this.scrollbarWidth = window.innerWidth - document.documentElement.clientWidth + 'px';
+    this.transitionDurationIn = 2000;
+    this.transitionDurationOut = 1250;
 
     this.state = {
+      willChange: false,
       active: false,
       closing: false
     };
@@ -25,65 +29,76 @@ class Section extends React.Component {
 
   animateIn(event) {
     if (event.currentTarget.getAttribute('data-overlay-id') == this.props.id) {
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.marginRight = this.scrollbarWidth;
-
       this.setState({
-        willAnimate: true
+        willChange: true
       });
 
-      window.requestAnimationFrame(() => {
+      window.setTimeout(() => {
         this.setState({
           active: true
         });
-      });
+
+        this.refs.wrapper.onTransitionEnd(() => {
+          document.documentElement.style.overflow = 'hidden';
+          document.body.style.marginRight = this.scrollbarWidth;
+          this.refs.section.style.overflowY = 'auto';
+          this.refs.close.classList.add(s.closeActive);
+        }, this.transitionDurationIn);
+      }, 50);
     }
   }
 
   animateOut() {
     document.documentElement.style.overflow = '';
     document.body.style.marginRight = '';
+    this.refs.section.style.overflowY = '';
+    this.refs.close.classList.remove(s.closeActive);
 
     this.setState({
       active: false,
       closing: true
     });
-  }
 
-  getClassName() {
-    let className = s.overlay;
-
-    if (this.state.active) {
-      className = s.overlayActive;
-    }
-
-    if (this.state.closing) {
-      className = s.overlayClosing;
-
-      window.setTimeout(() => {
-        this.setState({
-          closing: false
-        });
-      }, 1550);
-    }
-
-    return className;
+    this.refs.wrapper.onTransitionEnd(() => {
+      this.setState({
+        willChange: false,
+        closing: false
+      });
+    }, this.transitionDurationIn);
   }
 
   render() {
-    return (
-      <section ref="section" className={this.getClassName()}>
-        <div className={s.background} />
-        <a ref="close" className={s.close}>
-          &times;
-        </a>
-        <div className={s.wrapper}>
+    const getClassName = () => {
+      let className = s.overlay;
 
-          <div className={s.title}>
-            Lorem ipsum
-          </div>
-          <div className={s.card}>
-            Lorem ipsum
+      if (this.state.active) {
+        className = s.overlayActive;
+      }
+
+      if (this.state.closing) {
+        className = s.overlayClosing;
+      }
+
+      if (this.state.willChange) {
+        className += ` ${s.overlayWillChange}`;
+      }
+
+      return className;
+    }
+
+    return (
+      <section ref="section" className={getClassName()}>
+        <div ref="wrapper" className={s.wrapper}>
+          <a ref="close" className={s.close}>
+            &times;
+          </a>
+          <div ref="contentWrapper" className={s.contentWrapper}>
+            <div className={s.title}>
+              {this.props.title}
+            </div>
+            <div className={s.card}>
+              {this.props.content}
+            </div>
           </div>
         </div>
       </section>

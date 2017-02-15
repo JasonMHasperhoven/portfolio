@@ -2,9 +2,9 @@ import React from 'react';
 import Section from 'components/Section';
 import Selfie from './components/Selfie';
 import fadeElements from 'helpers/fadeElements';
-import IconFacebook from './components/IconFacebook';
-import IconGithub from './components/IconGithub';
-import IconMail from './components/IconMail';
+import IconFacebook from 'components/Icons/Facebook';
+import IconGithub from 'components/Icons/Github';
+import IconMail from 'components/Icons/Mail';
 import s from './AboutMe.css';
 
 class AboutMe extends React.Component {
@@ -46,17 +46,17 @@ class AboutMe extends React.Component {
               </div>
               <div>
                 <span className="is-inline-block" ref="icon1">
-                  <a className={s.icon}>
+                  <a href="mailto:martijn.hasperhoven@gmail.com" className={s.icon}>
                     <IconMail />
                   </a>
                 </span>
                 <span className="is-inline-block" ref="icon2" data-fade-delay-desktop="100">
-                  <a className={s.icon}>
+                  <a href="https://www.facebook.com/takingdownmusic" target="_blank" rel="noopener noreferrer" className={s.icon}>
                     <IconFacebook />
                   </a>
                 </span>
                 <span className="is-inline-block" ref="icon3" data-fade-delay-desktop="200">
-                  <a className={s.icon}>
+                  <a href="https://github.com/JasonMHasperhoven" target="_blank" rel="noopener noreferrer" className={s.icon}>
                     <IconGithub />
                   </a>
                 </span>
