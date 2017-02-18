@@ -103,12 +103,11 @@
     composes: background;
     background: url('./assets/hero-bg.jpg');
     background-size: cover;
-    opacity: .5;
   }
 
   &Gradient {
     composes: background;
-    background: linear-gradient(to top, #030205, transparent 20%);
+    background: linear-gradient(to top, #030205, rgba(0, 0, 0, 0.3) 20%);
   }
 }
 

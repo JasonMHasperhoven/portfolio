@@ -26,8 +26,7 @@
     transition: transform 1s cubic-bezier(.25, .85, .25, 1);
     box-shadow: 0 14px 24px -6px rgba(0, 0, 0, .4);
     background: linear-gradient(135deg, #512452, #691933);
-
-    /*@include media*/
+    background: linear-gradient(135deg, #551e57, #720f2f);
   }
 }
 

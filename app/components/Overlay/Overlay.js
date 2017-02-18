@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Overlay.css';
 import * as onTransitionEnd from 'helpers/transitionEnd';
 
-class Section extends React.Component {
+class Overlay extends React.Component {
   constructor() {
     super();
 
@@ -106,4 +106,4 @@ class Section extends React.Component {
   }
 }
 
-export default Section;
+export default Overlay;

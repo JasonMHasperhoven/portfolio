@@ -2,8 +2,7 @@ import { setFadeElements } from 'helpers/fadeElements';
 
 class Application {
   constructor() {
-    this.rootElement   = document.querySelector('.js-app');
-    // this.loaderElement = document.querySelector('.js-loader');
+    this.rootElement = document.querySelector('.js-app');
   }
 
   fadeIn() {

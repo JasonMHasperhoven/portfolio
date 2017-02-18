@@ -211,3 +211,76 @@
     composes: githubRepoIcon;
   }
 }
+
+.cardTechnologies {
+  overflow: hidden;
+
+  &:hover {
+    .cardTechnologiesImage {
+      opacity: 1;
+    }
+
+    .cardTechnologiesMask {
+      opacity: 1;
+    }
+  }
+
+  &Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url('./assets/technologies@1x.png');
+    background-size: 142px;
+    opacity: .7;
+    transition: opacity .5s;
+
+    @include media-pixel-ratio-double {
+      background-image: url('./assets/technologies@2x.png');
+    }
+
+    @include media-md {
+      background-size: 164px;
+    }
+  }
+
+  &Mask {
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+
+  &Action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -24px;
+    margin-top: -18px;
+    width: 48px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    transition: background .2s, color .2s;
+
+    &:hover {
+      background: #fff;
+      color: rgba(0, 0, 0, .5);
+    }
+  }
+
+  &Icon {
+    position: relative;
+    top: 1px;
+    width: 15px;
+    height: 15px;
+  }
+}

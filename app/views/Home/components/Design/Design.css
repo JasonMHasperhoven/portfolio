@@ -301,7 +301,7 @@
     transition: opacity .5s;
 
     @include media-pixel-ratio-double {
-      background-image: url('../OverlayTransaction/assets/transaction@1x.png');
+      background-image: url('../OverlayTransaction/assets/transaction@2x.png');
     }
 
     @include media-md {

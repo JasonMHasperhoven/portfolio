@@ -3,6 +3,7 @@ import Section from 'components/Section';
 import Grid from 'components/Grid';
 import Card from 'components/Card';
 import IconGithub from 'components/Icons/Github';
+import IconForward from 'components/Icons/Forward';
 import s from './Code.css';
 import sGrid from 'components/Grid/Grid.css';
 
@@ -168,7 +169,15 @@ const Code = () => {
         'data-fade-delay-desktop': 150
       },
       content: (
-        <Card />
+        <Card className={s.cardTechnologies}>
+          <a className={`${s.cardTechnologiesImage} js-overlay-toggle`} data-overlay-id="technologies">
+            <div className={s.cardTechnologiesMask}>
+              <div className={s.cardTechnologiesAction}>
+                <IconForward attributes={{ className: s.cardTechnologiesIcon }} />
+              </div>
+            </div>
+          </a>
+        </Card>
       )
     },
     {
