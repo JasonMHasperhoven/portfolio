@@ -25,4 +25,9 @@ class CardOverlayToggle extends React.Component {
   }
 }
 
+CardOverlayToggle.propTypes = {
+  id: React.PropTypes.string.isRequired,
+  className: React.PropTypes.string.isRequired
+};
+
 export default CardOverlayToggle;

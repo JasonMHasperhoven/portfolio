@@ -7,4 +7,10 @@ const Card = ({ children, className, colSpan }) => (
   </div>
 );
 
+Card.propTypes = {
+  children: React.PropTypes.node.isRequired,
+  className: React.PropTypes.string,
+  colSpan: React.PropTypes.number
+};
+
 export default Card;

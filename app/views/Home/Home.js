@@ -15,13 +15,29 @@ import OverlaySimpl from './components/OverlaySimpl';
 import { windowLoad, windowBeforeUnload } from 'helpers/globalEvents';
 
 class Home extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      isLoaded: false
+    };
+  }
+
   componentDidMount() {
     windowBeforeUnload.push(() => {
       window.scrollTo(0, 0);
     });
 
-    windowLoad.push(() => {
-      App.fadeIn();
+    App.fadeIn(() => {
+      console.timeStamp('app fadein');
+
+      window.setTimeout(() => {
+        console.timeStamp('loadedBelowTheFold');
+
+        this.setState({
+          isLoaded: true
+        });
+      }, 1500);
     });
   }
 
@@ -30,15 +46,23 @@ class Home extends React.Component {
       <div>
         <Hero />
         <AboutMe />
-        <Design />
-        <Code />
-        <Misc />
-        <Footer />
-        <OverlayArticles />
-        <OverlayOptimization />
-        <OverlayTransaction />
-        <OverlayTechnologies />
-        <OverlaySimpl />
+        {this.state.isLoaded ? (
+          <div>
+            <Design />
+            <Code />
+            <Misc />
+            <Footer />
+            <OverlayArticles />
+            <OverlayOptimization />
+            <OverlayTransaction />
+            <OverlayTechnologies />
+            <OverlaySimpl />
+          </div>
+        ) : (
+          <div>
+            Loading...
+          </div>
+        )}
       </div>
     );
   }

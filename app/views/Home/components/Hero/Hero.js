@@ -27,12 +27,13 @@ class Hero extends React.Component {
     this.refs.hero.style.height = `${this.windowHeight}px`;
 
     window.setTimeout(() => {
+      console.timeStamp('hero animatein');
       this.animateIn();
-    }, 1100);
+    }, 500);
   }
 
   animateIn() {
-    [this.refs.headline, this.refs.subline, this.refs.arrowDown].forEach((element) => {
+    [this.refs.headline, this.refs.subline, this.refs.arrowDown].forEach(element => {
       let delay = 0;
       if (element.getAttribute('data-fade-delay') !== 'undefined') {
         delay = element.getAttribute('data-fade-delay');

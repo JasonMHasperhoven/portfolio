@@ -46,7 +46,7 @@ class Misc extends React.Component {
         content: (
           <Card>
             <MusicPlayer
-              src="./assets/mp3/Execute.mp3"
+              src="./assets/static/mp3/Execute.mp3"
               title="Execute"
               className={s.execute} />
           </Card>
@@ -84,7 +84,7 @@ class Misc extends React.Component {
         content: (
           <Card>
             <MusicPlayer
-              src="./assets/mp3/Bordering.mp3"
+              src="./assets/static/mp3/Bordering.mp3"
               title="Bordering"
               className={s.bordering} />
           </Card>
@@ -140,7 +140,7 @@ class Misc extends React.Component {
         content: (
           <Card>
             <MusicPlayer
-              src="./assets/mp3/Ha.mp3"
+              src="./assets/static/mp3/Ha.mp3"
               title="Ha!"
               className={s.ha} />
           </Card>

@@ -54,4 +54,12 @@ class Section extends React.Component {
   }
 }
 
+Section.propTypes = {
+  title: React.PropTypes.string,
+  description: React.PropTypes.node,
+  label: React.PropTypes.string,
+  className: React.PropTypes.string,
+  attributes: React.PropTypes.object
+};
+
 export default Section;

@@ -86,7 +86,7 @@ class Design extends React.Component {
                 value: 'Page three',
                 href: './'
               }
-            ]}/>
+            ]} />
           </Card>
         )
       },

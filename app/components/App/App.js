@@ -5,12 +5,13 @@ class Application {
     this.rootElement = document.querySelector('.js-app');
   }
 
-  fadeIn() {
+  fadeIn(fn) {
     setFadeElements();
 
     window.setTimeout(() => {
       document.body.classList.add('is-loaded');
-    }, 500);
+      fn();
+    }, 300);
   }
 }
 

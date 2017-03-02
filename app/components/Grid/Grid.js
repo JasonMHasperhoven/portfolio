@@ -27,4 +27,8 @@ class Grid extends React.Component {
   }
 }
 
+Grid.propTypes = {
+  grid: React.PropTypes.array.isRequired
+};
+
 export default Grid;

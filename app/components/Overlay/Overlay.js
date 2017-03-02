@@ -109,4 +109,10 @@ class Overlay extends React.Component {
   }
 }
 
+Overlay.propTypes = {
+  id: React.PropTypes.string.isRequired,
+  children: React.PropTypes.node.isRequired,
+  animateInCallback: React.PropTypes.func
+};
+
 export default Overlay;

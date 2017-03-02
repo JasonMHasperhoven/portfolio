@@ -2,3 +2,5 @@
 node_modules
 sketch
 **/*.psd
+assets/*
+!assets/static/*
