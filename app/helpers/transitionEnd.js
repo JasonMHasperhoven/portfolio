@@ -37,18 +37,18 @@ EventTarget.prototype.transitionEndFallback = function(duration) {
   return this;
 };
 
-EventTarget.prototype.onTransitionEnd = function(func, duration) {
-  const transitionEndListener = func => {
+EventTarget.prototype.onTransitionEnd = function(fn, duration) {
+  const transitionEndListener = fn => {
     if (this === event.target) {
       this.removeEventListener(transitionEnd, transitionEndListenerWithFallback);
-      func();
+      fn();
     }
 
     return this;
   };
 
   const transitionEndListenerWithFallback = event => {
-    transitionEndListener(func).transitionEndFallback(duration);
+    transitionEndListener(fn).transitionEndFallback(duration);
   };
 
   this.addEventListener(transitionEnd, transitionEndListenerWithFallback);

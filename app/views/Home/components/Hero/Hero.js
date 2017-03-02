@@ -8,6 +8,14 @@ class Hero extends React.Component {
   constructor() {
     super();
 
+    this.r_t = (
+      <span className={s.headlineKerningFixMartijn}></span>
+    );
+
+    this.r_h = (
+      <span className={s.headlineKerningFixHasperhoven}></span>
+    );
+
     smoothScroll.init({
       speed: 1000,
       easing: 'easeInOutCubic'
@@ -38,21 +46,25 @@ class Hero extends React.Component {
 
   render() {
     return (
-      <div className={s.hero} ref="hero">
+      <div ref="hero" className={s.hero}>
         <div className={s.backgroundCover} />
         <div className={s.backgroundGradient} />
         <div className={s.table}>
           <div className={s.tableCell}>
-            <h1 className={s.headline} ref="headline">
-              mar<span className={s.headlineKerningFixMartijn}></span>tijn
-              hasper<span className={s.headlineKerningFixHasperhoven}></span>hoven
+            <h1 ref="headline" className={s.headline}>
+              mar{this.r_t}tijn
+              hasper{this.r_h}hoven
             </h1>
-            <h2 className={s.subline} ref="subline" data-fade-delay="300">
+            <h2 ref="subline" className={s.subline} data-fade-delay="300">
               ui developer.
             </h2>
           </div>
         </div>
-        <a data-scroll href="#aboutme" className={s.action} ref="arrowDown" data-fade-delay="900">
+        <a ref="arrowDown"
+          href="#aboutme"
+          className={s.action}
+          data-scroll
+          data-fade-delay="900">
           <IconAngleDown attributes={{ className: s.actionIcon }} />
         </a>
       </div>

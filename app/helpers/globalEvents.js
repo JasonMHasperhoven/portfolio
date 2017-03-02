@@ -4,17 +4,17 @@ export const windowResize       = [];
 export const windowBeforeUnload = [];
 
 window.onbeforeunload = () => {
-  windowBeforeUnload.forEach(func => func());
+  windowBeforeUnload.forEach(fn => fn());
 }
 
 window.onload = () => {
-  windowLoad.forEach(func => func());
+  windowLoad.forEach(fn => fn());
 
   window.onscroll = () => {
-    windowScroll.forEach(func => func());
+    windowScroll.forEach(fn => fn());
   }
 
   window.addEventListener('resize', () => {
-    windowResize.forEach(func => func());
+    windowResize.forEach(fn => fn());
   });
 }

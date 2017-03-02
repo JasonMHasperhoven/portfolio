@@ -1,4 +1,4 @@
-@import "helpers/media-queries";
+@import "helpers/mediaQueries";
 
 :global(.is-loaded) {
   .hero {

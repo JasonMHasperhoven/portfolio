@@ -1,19 +1,35 @@
-@import "helpers/media-queries";
+@import "helpers/mediaQueries";
 @import "helpers/variables";
 
 .section {
-  position: relative;
-  margin: 0 auto;
-  padding: ($spacing * 1.5) 0;
+  padding: 0;
+
+  @include media-sm {
+    padding: 0 $spacing;
+  }
 
   @include media-md {
-    max-width: 768px;
-    padding: ($spacing * 2) 0;
+    padding: ($spacing * 3) $spacing;
   }
 
   @include media-lg {
-    max-width: 1136px;
-    padding: ($spacing * 3) 0;
+    padding: ($spacing * 4) ($spacing * 1.5);
+  }
+
+  &Inner {
+    position: relative;
+    margin: 0 auto;
+    padding: ($spacing * 1.5) 0;
+
+    @include media-md {
+      max-width: 768px;
+      padding: ($spacing * 2) 0;
+    }
+
+    @include media-lg {
+      max-width: 1136px;
+      padding: ($spacing * 3) 0;
+    }
   }
 
   &Bg {
@@ -25,31 +41,24 @@
     border-radius: 2px;
     transition: transform 1s cubic-bezier(.25, .85, .25, 1);
     box-shadow: 0 14px 24px -6px rgba(0, 0, 0, .4);
-    background: linear-gradient(135deg, #512452, #691933);
     background: linear-gradient(135deg, #551e57, #720f2f);
   }
 }
 
 .row {
-  *zoom: 1;
-
-  &:after,
-  &:before {
-    display: table;
-
-    content: " ";
-  }
-
-  &:after {
-    clear: both;
-  }
+  composes: clearfix from "helpers/clearfix";
 }
 
 .wrapper {
-  composes: row;
+  composes: clearfix from "helpers/clearfix";
+  position: relative;
   margin: 0 auto;
   padding: 0 $spacing;
   transition: transform 1s cubic-bezier(.25, .85, .25, 1);
+
+  @include media-xs {
+    padding: 0 ($spacing - 2);
+  }
 
   @include media-md {
     padding: 0;
@@ -82,21 +91,12 @@
   }
 }
 
-/*.contentRow {
-  composes: row;
-  margin-bottom: $spacing * 1.5;
-
-  @media (min-width: 768px) {
-    margin-bottom: $spacing * 3;
-  }
-}*/
-
 .desc {
   composes: textShadow;
-  text-align: justify;
   margin-bottom: $spacing;
 
   @include media-md {
+    text-align: justify;
     margin-bottom: $spacing * 1.5;
   }
 

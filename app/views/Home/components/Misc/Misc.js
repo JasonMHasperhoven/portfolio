@@ -1,144 +1,164 @@
 import React from 'react';
-import Section from '../Section/Section';
-import Grid from '../Grid/Grid';
+import Section from 'components/Section';
+import Grid from 'components/Grid';
+import Card from 'components/Card';
+import MusicPlayer from './components/MusicPlayer';
+import IconForward from 'components/Icons/Forward';
+import IconPlay from 'components/Icons/Play';
 import s from './Misc.css';
+import sGrid from 'components/Grid/Grid.css';
+import { overlayToggles } from 'components/Overlay';
 
-const Misc = () => {
-  const title = 'Miscellaneous';
+class Misc extends React.Component {
+  constructor() {
+    super();
 
-  const description = (
-    <p>
-      I do creative as well as logical things. As long as we’re creating dreams,
-      I’m all in. I have an extensive background in music production, I have experience
-      with video editing and know how to handle a DSLR camera as well.
-    </p>
-  );
+    this.title = 'Miscellaneous';
 
-  const labels = [
-    'cubase',
-    'logic pro',
-    'softube',
-    'fabfilter',
-    'u-he',
-    'atom',
-    'terminal',
-    'git',
-    'ruby on rails',
-    'laravel',
-    'final cut pro',
-    'adobe after effects'
-  ];
+    this.description = (
+      <p>
+        I do creative as well as logical things. As long as we’re creating dreams,
+        I’m all in. I have an extensive background in music production, I have
+        experience with video editing and know how to handle a DSLR camera as well.
+      </p>
+    );
 
-  const grid = [
-    {
-      id: 'photoshop',
-      colSpan: 1,
-      card: {
-        title: 'Photoshop',
-        description: 'This is life',
-        imageUrl: './asds.png'
-      }
-    },
-    {
-      id: 'sketch',
-      colSpan: 2,
-      attributes: {
-        'data-fade-delay-desktop': 150
-      },
-      card: {
-        title: 'Sketch',
-        description: 'This is life',
-        imageUrl: './asds.png'
-      }
-    },
-    {
-      id: 'one',
-      colSpan: 1,
-      attributes: {
-        'data-fade-delay-desktop': 300
-      },
-      card: {
-        title: 'Photoshop',
-        description: 'This is life',
-        imageUrl: './asds.png'
-      }
-    },
-    {
-      colSpan: 1,
-      card: false
-    },
-    {
-      id: 'two',
-      colSpan: 1,
-      attributes: {
-        'data-fade-delay-desktop': 450
-      },
-      card: {
-        title: 'Photoshop',
-        description: 'This is life',
-        imageUrl: './asds.png'
-      }
-    },
-    // row
-    {
-      colSpan: 1,
-      card: false
-    },
-    {
-      id: 'three',
-      colSpan: 1,
-      card: {
-        title: 'somedesign',
-        description: 'This is life',
-        imageUrl: './asds.png'
-      }
-    },
-    {
-      id: 'four',
-      colSpan: 1,
-      attributes: {
-        'data-fade-delay-desktop': 150
-      },
-      card: {
-        title: 'somedesign',
-        description: 'This is life',
-        imageUrl: './asds.png'
-      }
-    },
-    {
-      id: 'five',
-      colSpan: 1,
-      card: false
-    },
-    {
-      id: 'siz',
-      colSpan: 1,
-      attributes: {
-        'data-fade-delay-desktop': 300
-      },
-      card: {
-        title: 'somedesign',
-        description: 'This is life',
-        imageUrl: './asds.png'
-      }
-    },
-    {
-      id: 'seven',
-      colSpan: 1,
-      card: false
-    }
-  ];
+    this.labels = [
+      'cubase',
+      'logic pro',
+      'softube',
+      'fabfilter',
+      'u-he',
+      'atom',
+      'terminal',
+      'git',
+      'final cut pro',
+      'adobe after effects'
+    ];
 
-  return (
-    <div className={s.misc}>
+    this.grid = [
+      {
+        id: 'execute',
+        attributes: {
+          className: sGrid.areaSingle,
+          'data-fade-delay-media-lg': 0
+        },
+        content: (
+          <Card>
+            <MusicPlayer
+              src="./assets/mp3/Execute.mp3"
+              title="Execute"
+              className={s.execute} />
+          </Card>
+        )
+      },
+      {
+        id: 'lookbook',
+        attributes: {
+          className: sGrid.areaDouble,
+          'data-fade-delay-media-lg': 450
+        },
+        content: (
+          <Card colSpan={2}>
+            <a className={s.lookbook}
+              href="https://www.youtube.com/watch?v=vw2hjGJaZd4"
+              target="_blank"
+              rel="noopener nofollow">
+              <IconPlay />
+            </a>
+          </Card>
+        )
+      },
+      {
+        id: 'space1',
+        attributes: {
+          className: sGrid.areaSingle
+        }
+      },
+      {
+        id: 'bordering',
+        attributes: {
+          className: sGrid.areaSingle,
+          'data-fade-delay-media-lg': 150
+        },
+        content: (
+          <Card>
+            <MusicPlayer
+              src="./assets/mp3/Bordering.mp3"
+              title="Bordering"
+              className={s.bordering} />
+          </Card>
+        )
+      },
+      {
+        id: 'space2',
+        attributes: {
+          className: sGrid.areaSingle
+        }
+      },
+      {
+        id: 'space3',
+        attributes: {
+          className: sGrid.areaSingle
+        }
+      },
+      {
+        id: 'space5',
+        attributes: {
+          className: sGrid.areaSingle
+        }
+      },
+      {
+        id: 'lipsticks',
+        attributes: {
+          className: sGrid.areaDouble,
+          'data-fade-delay-media-lg': 450
+        },
+        content: (
+          <Card colSpan={2}>
+            <a className={s.lipsticks}
+              href="https://www.youtube.com/watch?v=vGuDJddHkwM"
+              target="_blank"
+              rel="noopener nofollow">
+              <IconPlay />
+            </a>
+          </Card>
+        )
+      },
+      {
+        id: 'space4',
+        attributes: {
+          className: sGrid.areaSingle
+        }
+      },
+      {
+        id: 'ha',
+        attributes: {
+          className: sGrid.areaSingle,
+          'data-fade-delay-media-lg': 300
+        },
+        content: (
+          <Card>
+            <MusicPlayer
+              src="./assets/mp3/Ha.mp3"
+              title="Ha!"
+              className={s.ha} />
+          </Card>
+        )
+      },
+    ];
+  }
+
+  render() {
+    return (
       <Section
-        title={title}
-        description={description}
-        labels={labels}>
-        <Grid grid={grid} />
+        title={this.title}
+        description={this.description}
+        labels={this.labels}>
+        <Grid grid={this.grid} />
       </Section>
-    </div>
-  );
+    );
+  }
 };
 
 export default Misc;

@@ -22,13 +22,6 @@ body {
 
   &:before {
     display: none;
-
-    @include mobile {
-      content: "mobile";
-    }
-    @include desktop {
-      content: "desktop";
-    }
   }
 }
 
@@ -46,8 +39,8 @@ button {
   -moz-osx-font-smoothing: grayscale;
           font-smoothing: antialiased;
 
-  @include desktop {
-    font-size: 16px;
+  @include media-md {
+    font-size: 17px;
   }
 }
 

@@ -11,16 +11,26 @@ export const setFadeElements = () => {
 
 windowScroll.push(() => {
   fadeElements.forEach(element => {
+    if (!media.md && element.getAttribute('data-fade-gt-md')) return;
+
     if (window.innerHeight * .8 > element.getBoundingClientRect().top) {
       if (element.classList.contains('is-visible')) return;
 
       let delay = 0;
-      if (media.md && element.getAttribute('data-fade-delay-mobile')) {
-        delay = element.getAttribute('data-fade-delay-mobile');
+      if (element.getAttribute('data-fade-delay')) {
+        delay = element.getAttribute('data-fade-delay');
       }
 
-      if (media.lg && element.getAttribute('data-fade-delay-desktop')) {
-        delay = element.getAttribute('data-fade-delay-desktop');
+      if ((media.xs || media.sm) && element.getAttribute('data-fade-delay-media-s')) {
+        delay = element.getAttribute('data-fade-delay-media-s');
+      }
+
+      if (media.md && element.getAttribute('data-fade-delay-media-md')) {
+        delay = element.getAttribute('data-fade-delay-media-md');
+      }
+
+      if (media.lg && element.getAttribute('data-fade-delay-media-lg')) {
+        delay = element.getAttribute('data-fade-delay-media-lg');
       }
 
       window.setTimeout(() => {

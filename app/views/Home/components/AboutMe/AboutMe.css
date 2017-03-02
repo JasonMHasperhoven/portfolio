@@ -1,28 +1,13 @@
-@import "helpers/media-queries";
+@import "helpers/mediaQueries";
 @import "helpers/variables";
 
 .aboutMe {
-  padding: 0;
   margin-bottom: -110px;
-  /*background: linear-gradient(#030205, #27172d);*/
-  /*background: linear-gradient(#030205, #120b16);*/
   background: linear-gradient(#030205, transparent);
-
-  @include media-sm {
-    padding: 0 $spacing;
-  }
-
-  @include media-md {
-    padding: 48px $spacing 0;
-  }
-
-  @include media-lg {
-    padding: 64px $spacing 0;
-  }
 }
 
 .row {
-  composes: row from 'components/Section/Section.css';
+  composes: clearfix from "helpers/clearfix.css";
   margin-bottom: 134px;
 
   @include media-md {
@@ -30,24 +15,34 @@
   }
 }
 
-.colLeft {
-  @include media-md {
-    float: left;
-    width: 50%;
-  }
-}
-
-.colRight {
-  @include media-md {
-    float: right;
-    width: 50%;
+.content {
+  @include media-lg {
+    max-width: 50%;
   }
 }
 
 .selfie {
-  position: absolute;
-  top: -79px;
-  right: 0;
+  margin-bottom: $spacing;
+
+  @include media-md {
+    margin-bottom: $spacing * 2;
+  }
+
+  @include media-lg {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.title {
+  composes: title from "components/Section/Section.css";
+
+  &Sup {
+    composes: label from "components/Section/Section.css";
+    position: relative;
+    top: -3px;
+  }
 }
 
 .desc {
@@ -59,13 +54,8 @@
 }
 
 .copy {
-  composes: textShadow from 'components/Section/Section.css';
-  font-size: 15px;
+  composes: textShadow from "components/Section/Section.css";
   max-width: 464px;
-
-  @media (min-width: 768px) {
-    font-size: 17px;
-  }
 
   &Uppercase {
     text-transform: uppercase;
@@ -73,7 +63,7 @@
     letter-spacing: .05em;
     font-weight: 600;
 
-    @media (min-width: 768px) {
+    @include media-md {
       font-size: 15px;
     }
   }
@@ -87,6 +77,14 @@
       color: #c3256c;
       border-color: #c3256c;
     }
+  }
+}
+
+.actions {
+  text-align: right;
+
+  @include media-md {
+    text-align: left;
   }
 }
 

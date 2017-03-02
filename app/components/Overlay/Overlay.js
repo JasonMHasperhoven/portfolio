@@ -2,6 +2,8 @@ import React from 'react';
 import s from './Overlay.css';
 import * as onTransitionEnd from 'helpers/transitionEnd';
 
+export const overlayToggles = [];
+
 class Overlay extends React.Component {
   constructor() {
     super();
@@ -18,7 +20,7 @@ class Overlay extends React.Component {
   }
 
   componentDidMount() {
-    this.toggles = document.querySelectorAll('.js-overlay-toggle');
+    this.toggles = overlayToggles;
 
     this.toggles.forEach(toggle => {
       toggle.addEventListener('click', event => this.animateIn(event));
@@ -43,6 +45,10 @@ class Overlay extends React.Component {
           document.body.style.marginRight = this.scrollbarWidth;
           this.refs.section.style.overflowY = 'auto';
           this.refs.close.classList.add(s.closeActive);
+
+          if (typeof this.props.animateInCallback === 'function') {
+            this.props.animateInCallback();
+          }
         }, this.transitionDurationIn);
       }, 50);
     }
@@ -93,11 +99,8 @@ class Overlay extends React.Component {
             &times;
           </a>
           <div ref="contentWrapper" className={s.contentWrapper}>
-            <div className={s.title}>
-              {this.props.title}
-            </div>
             <div className={s.card}>
-              {this.props.content}
+              {this.props.children}
             </div>
           </div>
         </div>

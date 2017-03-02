@@ -1,4 +1,4 @@
-@import "helpers/media-queries";
+@import "helpers/mediaQueries";
 @import "helpers/variables";
 
 .wrapper {
@@ -10,10 +10,19 @@
   width: 288px;
   height: 511px;
   cursor: pointer;
-  box-shadow: 0 16px 32px -14px rgba(0, 0, 0, .6);
+  box-shadow: 0 16px 32px -14px rgba(0, 0, 0, .4);
+  background: #fff;
   transform: translateY(0);
   transition: transform .2s;
   margin-bottom: $spacing;
+  border: 6px solid rgba(95, 29, 62, .7);
+  box-sizing: content-box;
+  border-radius: 2px;
+
+  @include media-xs {
+    border-width: 2px;
+    margin-left: -14px;
+  }
 
   @include media-md {
     width: 320px;
@@ -29,7 +38,7 @@
     transform: translateY(-2px);
 
     .transactionBg {
-      opacity: .9;
+      opacity: 1;
     }
   }
 
@@ -45,12 +54,11 @@
     margin-top: -48px;
     padding: 24px;
     border-radius: 50%;
-    background: rgb(89, 31, 70);
-    color: #fff;
+    color: rgb(89, 31, 70);
     text-align: center;
   }
 
-  &PlayIcon {
+  &PlayCircleIcon {
     display: block;
   }
 
@@ -66,6 +74,8 @@
 
     background-image: url('./assets/transaction@1x.png');
     background-size: 288px 511px;
+
+    opacity: .8;
 
     @include media-md {
       background-size: 320px 568px;

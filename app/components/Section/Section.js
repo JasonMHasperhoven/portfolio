@@ -6,7 +6,9 @@ import s from './Section.css';
 class Section extends React.Component {
   componentDidMount() {
     fadeElements.push(
-      this.refs.title,
+      ...this.props.title ? [
+        this.refs.title
+      ] : [],
       ...this.props.description && this.props.labels ? [
         this.refs.desc,
         this.refs.labels
@@ -21,27 +23,31 @@ class Section extends React.Component {
 
   render() {
     return (
-      <section className={s.section}>
-        <div ref="background" className={s.sectionBg}></div>
-        <div ref="wrapper" className={s.wrapper}>
-          <h2 ref="title" className={s.title}>
-            {this.props.title}
-          </h2>
-          {this.props.description && this.props.labels ? (
-            <div className={s.row}>
-              <div ref="desc" className={s.desc}>
-                {this.props.description}
+      <section className={`${s.section} ${this.props.className ? this.props.className : ''}`} {...this.props.attributes}>
+        <div className={s.sectionInner}>
+          <div ref="background" className={s.sectionBg}></div>
+          <div ref="wrapper" className={s.wrapper}>
+            {this.props.title && (
+              <h2 ref="title" className={s.title}>
+                {this.props.title}
+              </h2>
+            )}
+            {this.props.description && this.props.labels ? (
+              <div className={s.row}>
+                <div ref="desc" className={s.desc}>
+                  {this.props.description}
+                </div>
+                <div ref="labels" className={s.labels}>
+                  {this.props.labels.map(label => (
+                    <span key={label} className={s.label}>
+                      #{label}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div ref="labels" className={s.labels}>
-                {this.props.labels.map(label => (
-                  <span key={label} className={s.label}>
-                    #{label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ) : ''}
-          {this.props.children}
+            ) : ''}
+            {this.props.children}
+          </div>
         </div>
       </section>
     );

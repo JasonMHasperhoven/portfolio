@@ -1,22 +1,5 @@
-@import "helpers/media-queries";
+@import "helpers/mediaQueries";
 @import "helpers/variables";
-
-.code {
-  padding: 0;
-  /*background: linear-gradient(#27172d, #2d1726);*/
-
-  @include media-sm {
-    padding: 0 $spacing;
-  }
-
-  @include media-md {
-    padding: ($spacing * 3) $spacing;
-  }
-
-  @include media-lg {
-    padding: ($spacing * 4) ($spacing * 1.5);
-  }
-}
 
 .githubRepo {
   position: relative;
@@ -212,75 +195,61 @@
   }
 }
 
-.cardTechnologies {
-  overflow: hidden;
-
-  &:hover {
-    .cardTechnologiesImage {
-      opacity: 1;
-    }
-
-    .cardTechnologiesMask {
-      opacity: 1;
-    }
-  }
+.onTransitionEnd {
+  composes: githubRepo;
 
   &Image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url('./assets/technologies@1x.png');
-    background-size: 142px;
-    opacity: .7;
-    transition: opacity .5s;
+    composes: githubRepoImage;
+    background-image: url('./assets/on-transition-end@1x.png');
 
     @include media-pixel-ratio-double {
-      background-image: url('./assets/technologies@2x.png');
-    }
-
-    @include media-md {
-      background-size: 164px;
+      background-image: url('./assets/on-transition-end@2x.png');
     }
   }
 
-  &Mask {
-    background: rgba(0, 0, 0, .5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity .5s;
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, .8);
   }
 
-  &Action {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -24px;
-    margin-top: -18px;
-    width: 48px;
-    height: 36px;
-    line-height: 36px;
-    text-align: center;
-    border: 1px solid #fff;
-    border-radius: 2px;
-    transition: background .2s, color .2s;
-
-    &:hover {
-      background: #fff;
-      color: rgba(0, 0, 0, .5);
-    }
+  &Title {
+    composes: githubRepoTitle;
+    color: #eaca8f;
   }
 
   &Icon {
-    position: relative;
-    top: 1px;
-    width: 15px;
-    height: 15px;
+    composes: githubRepoIcon;
+  }
+}
+
+.cardTechnologiesImage {
+  background-image: url('./assets/technologies@1x.png');
+
+  @include media-pixel-ratio-double {
+    background-image: url('./assets/technologies@2x.png');
+  }
+}
+
+.cardOptimizationImage {
+  background-image: url('./assets/optimization@1x.png');
+
+  @include media-pixel-ratio-double {
+    background-image: url('./assets/optimization@2x.png');
+  }
+}
+
+.cardSimplImage {
+  background-image: url('./assets/simpl@1x.png');
+
+  @include media-pixel-ratio-double {
+    background-image: url('./assets/simpl@2x.png');
+  }
+}
+
+.cardArticlesImage {
+  background-image: url('./assets/knowledge-is-power@1x.jpg');
+
+  @include media-pixel-ratio-double {
+    background-image: url('./assets/knowledge-is-power@2x.jpg');
   }
 }
