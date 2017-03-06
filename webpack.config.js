@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'assets'),
     filename: '[name].js',
-    publicPath: '/martijnhasperhoven/assets/'
+    publicPath: DEV ? '/martijnhasperhoven/assets/' : '/assets/'
   },
   target: 'web',
   module: {

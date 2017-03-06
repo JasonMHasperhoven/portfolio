@@ -3,6 +3,7 @@ import smoothScroll from 'smooth-scroll';
 import IconAngleDown from 'components/Icons/AngleDown';
 import { windowScroll } from 'helpers/globalEvents';
 import s from './Hero.css';
+import bgImage from './assets/hero-bg.jpg';
 
 class Hero extends React.Component {
   constructor() {
@@ -26,6 +27,16 @@ class Hero extends React.Component {
     this.windowHeight = window.innerHeight;
     this.refs.hero.style.height = `${this.windowHeight}px`;
 
+    if (this.refs.bgImage.addEventListener) {
+      this.refs.bgImage.addEventListener('load', this.fadeIn.bind(this));
+    } else {
+      this.refs.bgImage.attachEvent('onload', this.fadeIn.bind(this));
+    }
+  }
+
+  fadeIn() {
+    this.props.homeFadeIn();
+
     // 500 seems safe based upon timeline timeStamp analysis
     window.setTimeout(() => {
       this.animateIn();
@@ -48,6 +59,7 @@ class Hero extends React.Component {
   render() {
     return (
       <div ref="hero" className={s.hero}>
+        <img ref="bgImage" src={bgImage} className="is-hidden" />
         <div className={s.backgroundCover} />
         <div className={s.backgroundGradient} />
         <div className={s.table}>

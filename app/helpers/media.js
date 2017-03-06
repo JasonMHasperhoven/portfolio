@@ -1,4 +1,4 @@
-import * as modernizr from 'vendor/modernizr.mq';
+import 'vendor/modernizr.mq';
 import { windowResize } from './globalEvents';
 
 let media = {};

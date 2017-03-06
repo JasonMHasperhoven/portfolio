@@ -30,7 +30,9 @@ class Home extends React.Component {
     windowBeforeUnload.push(() => {
       window.scrollTo(0, 0);
     });
+  }
 
+  fadeIn() {
     App.fadeIn(() => {
       // 2000 seems safe based upon timeline timeStamp analysis
       window.setTimeout(() => {
@@ -44,7 +46,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Hero />
+        <Hero homeFadeIn={this.fadeIn.bind(this)} />
         <AboutMe />
         {this.state.isLoaded ? (
           <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Overlay.css';
-import * as onTransitionEnd from 'helpers/transitionEnd';
+import 'helpers/transitionEnd';
 
 export const overlayToggles = [];
 
