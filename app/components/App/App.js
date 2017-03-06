@@ -8,6 +8,7 @@ class Application {
   fadeIn(fn) {
     setFadeElements();
 
+    // 300 seems safe based upon timeline timeStamp analysis
     window.setTimeout(() => {
       document.body.classList.add('is-loaded');
       fn();

@@ -1,11 +1,13 @@
 import React from 'react';
 import App from 'components/App';
+import Footer from 'components/Footer';
+
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Design from './components/Design';
 import Code from './components/Code';
 import Misc from './components/Misc';
-import Footer from 'components/Footer';
+import Loading from './components/Loading';
 import OverlayArticles from './components/OverlayArticles';
 import OverlayTransaction from './components/OverlayTransaction';
 import OverlayTechnologies from './components/OverlayTechnologies';
@@ -13,6 +15,7 @@ import OverlayOptimization from './components/OverlayOptimization';
 import OverlaySimpl from './components/OverlaySimpl';
 
 import { windowLoad, windowBeforeUnload } from 'helpers/globalEvents';
+import { setFadeElements } from 'helpers/fadeElements';
 
 class Home extends React.Component {
   constructor() {
@@ -29,15 +32,12 @@ class Home extends React.Component {
     });
 
     App.fadeIn(() => {
-      console.timeStamp('app fadein');
-
+      // 2000 seems safe based upon timeline timeStamp analysis
       window.setTimeout(() => {
-        console.timeStamp('loadedBelowTheFold');
-
         this.setState({
           isLoaded: true
-        });
-      }, 1500);
+        }, setFadeElements);
+      }, 2000);
     });
   }
 
@@ -59,9 +59,7 @@ class Home extends React.Component {
             <OverlaySimpl />
           </div>
         ) : (
-          <div>
-            Loading...
-          </div>
+          <Loading />
         )}
       </div>
     );

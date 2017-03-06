@@ -44,7 +44,7 @@ class OverlayTransaction extends React.Component {
         </p>
         <div ref="video" className={s.transaction} onClick={this.loadVideo.bind(this)}>
           {this.state.videoLoaded ? (
-            <video width="100%" autoplay loop controls>
+            <video width="100%" autoPlay loop controls>
               <source src="./assets/static/transaction.mp4" type="video/mp4" />
             </video>
           ) : (

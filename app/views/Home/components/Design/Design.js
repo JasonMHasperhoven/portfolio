@@ -8,6 +8,7 @@ import DropdownMenu from './components/DropdownMenu';
 import Dropdown from './components/Dropdown';
 import s from './Design.css';
 import sGrid from 'components/Grid/Grid.css';
+import { uniqueId } from 'helpers/uniqueId';
 
 class Design extends React.Component {
   constructor() {
@@ -69,6 +70,7 @@ class Design extends React.Component {
         attributes: {
           className: sGrid.areaDouble,
           style: { zIndex: 2 },
+          'data-fade-delay-media-md': 150,
           'data-fade-delay-media-lg': 150
         },
         content: (
@@ -91,9 +93,15 @@ class Design extends React.Component {
         )
       },
       {
-        id: 'space1',
+        id: uniqueId(),
         attributes: {
           className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
+        }
+      },
+      {
+        id: uniqueId(),
+        attributes: {
+          className: `${sGrid.areaSingle} ${sGrid.areaMdOnly}`
         }
       },
       {
@@ -109,13 +117,13 @@ class Design extends React.Component {
         )
       },
       {
-        id: 'space2',
+        id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
         }
       },
       {
-        id: 'space3',
+        id: uniqueId(),
         attributes: {
           className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
         }
@@ -124,7 +132,9 @@ class Design extends React.Component {
         id: 'checkout',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-s': 150
+          'data-fade-delay-media-s': 150,
+          'data-fade-delay-media-md': 150,
+          'data-fade-delay-media-lg': 0
         },
         content: (
           <Card className={s.cardCheckout}>
@@ -164,7 +174,7 @@ class Design extends React.Component {
         )
       },
       {
-        id: 'space4',
+        id: uniqueId(),
         attributes: {
           className: sGrid.areaSingle
         }
@@ -173,6 +183,7 @@ class Design extends React.Component {
         id: 'transaction',
         attributes: {
           className: sGrid.areaSingle,
+          'data-fade-delay-media-md': 150,
           'data-fade-delay-media-lg': 300
         },
         content: (

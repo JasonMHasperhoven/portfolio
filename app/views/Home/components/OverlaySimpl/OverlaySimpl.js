@@ -115,7 +115,7 @@ class OverlaySimpl extends React.Component {
                 </ul>
                 <div ref="video" className={s.login} onClick={this.loadVideo.bind(this)}>
                   {this.state.videoLoaded ? (
-                    <video width="100%" autoplay loop controls>
+                    <video width="100%" autoPlay loop controls>
                       <source src="./assets/static/login-flow.mp4" type="video/mp4" />
                     </video>
                   ) : (

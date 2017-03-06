@@ -5,15 +5,13 @@ import s from './Section.css';
 
 class Section extends React.Component {
   componentDidMount() {
-    fadeElements.push(
-      ...this.props.title ? [
-        this.refs.title
-      ] : [],
-      ...this.props.description && this.props.labels ? [
-        this.refs.desc,
-        this.refs.labels
-      ] : []
-    );
+    if (this.props.title) {
+      fadeElements.push(this.refs.title);
+    }
+
+    if (this.props.description && this.props.labels) {
+      fadeElements.push(this.refs.desc, this.refs.labels);
+    }
 
     parallaxSections.push({
       background: this.refs.background,
@@ -28,16 +26,16 @@ class Section extends React.Component {
           <div ref="background" className={s.sectionBg}></div>
           <div ref="wrapper" className={s.wrapper}>
             {this.props.title && (
-              <h2 ref="title" className={s.title}>
+              <h2 ref="title" className={s.title} data-fade-gt-md>
                 {this.props.title}
               </h2>
             )}
             {this.props.description && this.props.labels ? (
               <div className={s.row}>
-                <div ref="desc" className={s.desc}>
+                <div ref="desc" className={s.desc} data-fade-gt-md>
                   {this.props.description}
                 </div>
-                <div ref="labels" className={s.labels}>
+                <div ref="labels" className={s.labels} data-fade-gt-md>
                   {this.props.labels.map(label => (
                     <span key={label} className={s.label}>
                       #{label}

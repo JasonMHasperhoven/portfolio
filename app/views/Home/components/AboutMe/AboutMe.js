@@ -32,7 +32,7 @@ class AboutMe extends React.Component {
           <div ref="selfie" className={s.selfie} data-fade-gt-md>
             <Selfie />
           </div>
-          <h2 ref="title" className={s.title}>
+          <h2 ref="title" className={s.title} data-fade-gt-md>
             Hallo! <sup className={s.titleSup}>hello in dutch</sup>
           </h2>
           <div className={s.content}>
@@ -57,12 +57,17 @@ class AboutMe extends React.Component {
               </p>
             </div>
             <div className={s.actions}>
-              <span className="is-inline-block" ref="icon1">
+              <span className="is-inline-block"
+                ref="icon1"
+                data-fade-gt-md>
                 <a href="mailto:martijn.hasperhoven@gmail.com" className={s.icon}>
                   <IconMail />
                 </a>
               </span>
-              <span className="is-inline-block" ref="icon2" data-fade-delay="100">
+              <span className="is-inline-block"
+                ref="icon2"
+                data-fade-gt-md
+                data-fade-delay="100">
                 <a href="https://www.facebook.com/takingdownmusic"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -70,7 +75,10 @@ class AboutMe extends React.Component {
                   <IconFacebook />
                 </a>
               </span>
-              <span className="is-inline-block" ref="icon3" data-fade-delay="200">
+              <span className="is-inline-block"
+                ref="icon3"
+                data-fade-gt-md
+                data-fade-delay="200">
                 <a href="https://github.com/JasonMHasperhoven"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -26,8 +26,8 @@ class Hero extends React.Component {
     this.windowHeight = window.innerHeight;
     this.refs.hero.style.height = `${this.windowHeight}px`;
 
+    // 500 seems safe based upon timeline timeStamp analysis
     window.setTimeout(() => {
-      console.timeStamp('hero animatein');
       this.animateIn();
     }, 500);
   }

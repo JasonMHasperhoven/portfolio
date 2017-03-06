@@ -8,6 +8,7 @@ import IconForward from 'components/Icons/Forward';
 import s from './Code.css';
 import sGrid from 'components/Grid/Grid.css';
 import { overlayToggles } from 'components/Overlay';
+import { uniqueId } from 'helpers/uniqueId';
 
 class Code extends React.Component {
   constructor() {
@@ -81,9 +82,16 @@ class Code extends React.Component {
         )
       },
       {
+        id: uniqueId(),
+        attributes: {
+          className: `${sGrid.areaSingle} ${sGrid.areaMdOnly}`
+        }
+      },
+      {
         id: 'multiModal',
         attributes: {
           className: sGrid.areaDouble,
+          'data-fade-delay-media-md': 150,
           'data-fade-delay-media-lg': 150
         },
         content: (
@@ -109,9 +117,9 @@ class Code extends React.Component {
         )
       },
       {
-        id: 'space5',
+        id: uniqueId(),
         attributes: {
-          className: sGrid.areaSingle
+          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
         }
       },
       {
@@ -137,7 +145,7 @@ class Code extends React.Component {
         )
       },
       {
-        id: 'space1',
+        id: uniqueId(),
         attributes: {
           className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
         }
@@ -146,7 +154,9 @@ class Code extends React.Component {
         id: 'articles',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 450
+          'data-fade-delay-media-s': 150,
+          'data-fade-delay-media-md': 150,
+          'data-fade-delay-media-lg': 0
         },
         content: (
           <Card className={s.cardArticles}>
@@ -155,11 +165,16 @@ class Code extends React.Component {
         )
       },
       {
+        id: uniqueId(),
+        attributes: {
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
+        }
+      },
+      {
         id: 'optimization',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-s': 150,
-          'data-fade-delay-media-lg': 450
+          'data-fade-delay-media-lg': 150
         },
         content: (
           <Card className={s.cardOptimization}>
@@ -167,17 +182,13 @@ class Code extends React.Component {
           </Card>
         )
       },
-      // row
-      {
-        id: 'space2',
-        attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
-        }
-      },
       {
         id: 'railsDropdownMenuComponent',
         attributes: {
-          className: sGrid.areaSingle
+          className: sGrid.areaSingle,
+          'data-fade-delay-media-s': 150,
+          'data-fade-delay-media-md': 150,
+          'data-fade-delay-media-lg': 300
         },
         content: (
           <Card className={s.railsDropdownMenu}>
@@ -197,17 +208,17 @@ class Code extends React.Component {
         )
       },
       {
-        id: 'space4',
+        id: uniqueId(),
         attributes: {
-          className: sGrid.areaSingle
+          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
         }
       },
       {
         id: 'technologies',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-s': 150,
-          'data-fade-delay-media-lg': 150
+          'data-fade-delay-media-md': 300,
+          'data-fade-delay-media-lg': 450
         },
         content: (
           <Card className={s.cardTechnologies}>
@@ -216,7 +227,7 @@ class Code extends React.Component {
         )
       },
       {
-        id: 'space3',
+        id: uniqueId(),
         attributes: {
           className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
         }
@@ -225,7 +236,8 @@ class Code extends React.Component {
         id: 'simpl',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 300
+          'data-fade-delay-media-s': 150,
+          'data-fade-delay-media-md': 0
         },
         content: (
           <Card className={s.cardSimpl}>
@@ -234,10 +246,16 @@ class Code extends React.Component {
         )
       },
       {
+        id: uniqueId(),
+        attributes: {
+          className: `${sGrid.areaSingle} ${sGrid.areaLtMdOnly}`
+        }
+      },
+      {
         id: 'onTransitionEnd',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 300
+          'data-fade-delay-media-md': 150
         },
         content: (
           <Card className={s.onTransitionEnd}>

@@ -8,6 +8,7 @@ import IconPlay from 'components/Icons/Play';
 import s from './Misc.css';
 import sGrid from 'components/Grid/Grid.css';
 import { overlayToggles } from 'components/Overlay';
+import { uniqueId } from 'helpers/uniqueId';
 
 class Misc extends React.Component {
   constructor() {
@@ -40,8 +41,7 @@ class Misc extends React.Component {
       {
         id: 'execute',
         attributes: {
-          className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 0
+          className: sGrid.areaSingle
         },
         content: (
           <Card>
@@ -56,7 +56,7 @@ class Misc extends React.Component {
         id: 'lookbook',
         attributes: {
           className: sGrid.areaDouble,
-          'data-fade-delay-media-lg': 450
+          'data-fade-delay-media-md': 150
         },
         content: (
           <Card colSpan={2}>
@@ -64,22 +64,30 @@ class Misc extends React.Component {
               href="https://www.youtube.com/watch?v=vw2hjGJaZd4"
               target="_blank"
               rel="noopener nofollow">
-              <IconPlay />
+              <span className={s.lookbookPlayCircle}>
+                <IconPlay attributes={{ className: s.lookbookPlayIcon }} />
+              </span>
             </a>
           </Card>
         )
       },
       {
-        id: 'space1',
+        id: uniqueId(),
         attributes: {
           className: sGrid.areaSingle
+        }
+      },
+      {
+        id: uniqueId(),
+        attributes: {
+          className: `${sGrid.areaSingle} ${sGrid.areaMdOnly}`
         }
       },
       {
         id: 'bordering',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 150
+          'data-fade-delay-media-lg': 300
         },
         content: (
           <Card>
@@ -91,28 +99,28 @@ class Misc extends React.Component {
         )
       },
       {
-        id: 'space2',
+        id: uniqueId(),
         attributes: {
-          className: sGrid.areaSingle
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
         }
       },
       {
-        id: 'space3',
+        id: uniqueId(),
         attributes: {
-          className: sGrid.areaSingle
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
         }
       },
       {
-        id: 'space5',
+        id: uniqueId(),
         attributes: {
-          className: sGrid.areaSingle
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
         }
       },
       {
         id: 'lipsticks',
         attributes: {
           className: sGrid.areaDouble,
-          'data-fade-delay-media-lg': 450
+          'data-fade-delay-media-md': 150
         },
         content: (
           <Card colSpan={2}>
@@ -120,15 +128,17 @@ class Misc extends React.Component {
               href="https://www.youtube.com/watch?v=vGuDJddHkwM"
               target="_blank"
               rel="noopener nofollow">
-              <IconPlay />
+              <span className={s.lipsticksPlayCircle}>
+                <IconPlay attributes={{ className: s.lipsticksPlayIcon }} />
+              </span>
             </a>
           </Card>
         )
       },
       {
-        id: 'space4',
+        id: uniqueId(),
         attributes: {
-          className: sGrid.areaSingle
+          className: `${sGrid.areaSingle} ${sGrid.areaMdAnythingBut}`
         }
       },
       {

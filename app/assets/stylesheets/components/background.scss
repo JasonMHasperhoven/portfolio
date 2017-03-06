@@ -1,16 +1,13 @@
 .background {
   &--1 {
-    // background: linear-gradient(100deg, rgba(37, 21, 76, 0.3) 12%, rgba(169, 63, 135, 0.2) 37%);
     background: linear-gradient(100deg, rgba(30, 5, 91, 0.3) 12%, rgba(198, 33, 145, 0.2) 37%);
   }
 
   &--2 {
-    // background: linear-gradient(8deg, #030306 15%, rgba(95, 15, 113, 0.1) 46%);
     background: linear-gradient(8deg, #020207 15%, rgba(100, 0, 148, 0.1) 46%);
   }
 
   &--3 {
-    // background: linear-gradient(193deg, #070506 12%, rgba(150, 14, 50, 0.1) 68%);
     background: linear-gradient(193deg, #070405 12%, rgba(164, 0, 44, 0.1) 68%);
   }
 }

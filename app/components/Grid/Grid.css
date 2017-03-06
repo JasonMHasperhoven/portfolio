@@ -16,10 +16,50 @@
     height: 164px;
   }
 
+  &MdOnly {
+    display: none;
+
+    @include media-md {
+      display: block;
+    }
+
+    @include media-lg {
+      display: none;
+    }
+  }
+
+  &MdAnythingBut {
+    display: block;
+
+    @include media-md {
+      display: none;
+    }
+
+    @include media-lg {
+      display: block;
+    }
+  }
+
+  &LtMdOnly {
+    display: block;
+
+    @include media-md {
+      display: none;
+    }
+  }
+
   &GtMdOnly {
     display: none;
 
     @include media-md {
+      display: block;
+    }
+  }
+
+  &GtLgOnly {
+    display: none;
+
+    @include media-lg {
       display: block;
     }
   }
