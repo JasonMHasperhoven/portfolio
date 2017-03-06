@@ -9,12 +9,12 @@ window.onbeforeunload = () => {
 
 window.onload = () => {
   windowLoad.forEach(fn => fn());
-
-  window.onscroll = () => {
-    windowScroll.forEach(fn => fn());
-  }
-
-  window.addEventListener('resize', () => {
-    windowResize.forEach(fn => fn());
-  });
 }
+
+window.onscroll = () => {
+  windowScroll.forEach(fn => fn());
+}
+
+window.addEventListener('resize', () => {
+  windowResize.forEach(fn => fn());
+});

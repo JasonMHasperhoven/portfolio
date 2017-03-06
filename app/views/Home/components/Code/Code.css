@@ -222,6 +222,33 @@
   }
 }
 
+.portfolio {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url('./assets/portfolio@1x.jpg');
+
+    @include media-pixel-ratio-double {
+      background-image: url('./assets/portfolio@2x.jpg');
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, .8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #ce2176;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
 .cardTechnologiesImage {
   background-image: url('./assets/technologies@1x.png');
 

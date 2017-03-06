@@ -254,7 +254,7 @@ class Code extends React.Component {
       {
         id: 'onTransitionEnd',
         attributes: {
-          className: sGrid.areaSingle,
+          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`,
           'data-fade-delay-media-md': 150
         },
         content: (
@@ -274,6 +274,38 @@ class Code extends React.Component {
           </Card>
         )
       },
+      {
+        id: uniqueId(),
+        attributes: {
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
+        }
+      },
+      {
+        id: 'portfolio',
+        attributes: {
+          className: sGrid.areaSingle,
+          'data-fade-delay-media-s': 150,
+          'data-fade-delay-media-md': 150,
+          'data-fade-delay-media-lg': 450
+        },
+        content: (
+          <Card className={s.portfolio}>
+            <div className={s.portfolioImage} />
+            <a href="https://github.com/JasonMHasperhoven/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.portfolioWrapper}>
+              <div className={s.portfolioTitle}>
+                <IconGithub attributes={{ className: s.portfolioIcon }} /> portfolio
+              </div>
+              <div className={s.portfolioDesc}>
+                Check out the codebase of this website on github.
+                Powered by React, PostCSS, Webpack and Babel.
+              </div>
+            </a>
+          </Card>
+        )
+      }
     ];
   }
 
