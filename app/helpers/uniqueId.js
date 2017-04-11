@@ -4,4 +4,4 @@ export const uniqueId = local => {
   incrementer++;
 
   return incrementer;
-}
+};

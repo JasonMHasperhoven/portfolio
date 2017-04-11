@@ -1,6 +1,5 @@
 import React from 'react';
 import Overlay from 'components/Overlay';
-import s from './OverlayOptimization.css';
 
 const OverlayOptimization = () => (
   <Overlay id="optimization">
@@ -23,7 +22,7 @@ const OverlayOptimization = () => (
         <p>
           A very well known concept is to bundle your assets, to avoid requests. But in
           my experience - over time - your application keeps increasing in size and soon
-          you'll endup with huge css and js assets which include everything your application
+          you{'’'}ll endup with huge css and js assets which include everything your application
           needs. For a visited page you might only need 10% of your applications assets.
         </p>
         <p>
@@ -44,7 +43,7 @@ const OverlayOptimization = () => (
         </p>
         <p>
           Here’s{' '}
-          <a href="https://modpagespeed.com/doc/" target="_blank" rel="noopener nofollow">
+          <a href="https://modpagespeed.com/doc/" target="_blank" rel="noopener noreferrer">
             Google’s PageSpeed Documentation
           </a> for more tips.
         </p>
@@ -61,7 +60,7 @@ const OverlayOptimization = () => (
         </p>
         <p>
           Because of this, I’ve spend a lot of time testing and researching about this topic.{' '}
-          <a href="https://www.youtube.com/watch?v=1ZWugkJV5Ks" target="_blank" rel="noopener nofollow">
+          <a href="https://www.youtube.com/watch?v=1ZWugkJV5Ks" target="_blank" rel="noopener noreferrer">
             GSAP has published a video
           </a>{' '}
           showing that javascript animations perform better than css.
@@ -105,8 +104,11 @@ const OverlayOptimization = () => (
         </p>
         <p>
           See{' '}
-          <a href="https://moz.com/blog/seo-and-digital-trends-in-2017" target="_blank"
-            rel="noopener nofollow">
+          <a
+            href="https://moz.com/blog/seo-and-digital-trends-in-2017"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             SEO and digital trends in 2017
           </a> for more.
         </p>

@@ -38,7 +38,7 @@ class MusicPlayer extends React.Component {
           {this.props.title}
         </div>
         <div className={s.actions}>
-          <a className={s.playPause} onClick={this.playPause.bind(this)}>
+          <a className={s.playPause} onClick={() => this.playPause()}>
             {this.state.active ? (
               <IconPause attributes={{ className: '' }} />
             ) : (
@@ -53,5 +53,11 @@ class MusicPlayer extends React.Component {
     );
   }
 }
+
+MusicPlayer.propTypes = {
+  title: React.PropTypes.string,
+  src: React.PropTypes.string,
+  className: React.PropTypes.string
+};
 
 export default MusicPlayer;

@@ -23,7 +23,7 @@ class Section extends React.Component {
     return (
       <section className={`${s.section} ${this.props.className ? this.props.className : ''}`} {...this.props.attributes}>
         <div className={s.sectionInner}>
-          <div ref="background" className={s.sectionBg}></div>
+          <div ref="background" className={s.sectionBg} />
           <div ref="wrapper" className={s.wrapper}>
             {this.props.title && (
               <h2 ref="title" className={s.title} data-fade-gt-md>
@@ -55,9 +55,13 @@ class Section extends React.Component {
 Section.propTypes = {
   title: React.PropTypes.string,
   description: React.PropTypes.node,
-  label: React.PropTypes.string,
+  labels: React.PropTypes.arrayOf(React.PropTypes.string),
   className: React.PropTypes.string,
-  attributes: React.PropTypes.object
+  attributes: React.PropTypes.objectOf(React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ])),
+  children: React.PropTypes.node
 };
 
 export default Section;

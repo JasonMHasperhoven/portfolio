@@ -6,4 +6,11 @@ const IconForward = ({ attributes }) => (
   </svg>
 );
 
+IconForward.propTypes = {
+  attributes: React.PropTypes.objectOf(React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ]))
+};
+
 export default IconForward;

@@ -1,6 +1,8 @@
 import React from 'react';
 import App from 'components/App';
 import Footer from 'components/Footer';
+import { windowBeforeUnload } from 'helpers/globalEvents';
+import { setFadeElements } from 'helpers/fadeElements';
 
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
@@ -13,9 +15,6 @@ import OverlayTransaction from './components/OverlayTransaction';
 import OverlayTechnologies from './components/OverlayTechnologies';
 import OverlayOptimization from './components/OverlayOptimization';
 import OverlaySimpl from './components/OverlaySimpl';
-
-import { windowLoad, windowBeforeUnload } from 'helpers/globalEvents';
-import { setFadeElements } from 'helpers/fadeElements';
 
 class Home extends React.Component {
   constructor() {
@@ -46,7 +45,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Hero homeFadeIn={this.fadeIn.bind(this)} />
+        <Hero homeFadeIn={() => this.fadeIn()} />
         <AboutMe />
         {this.state.isLoaded ? (
           <div>

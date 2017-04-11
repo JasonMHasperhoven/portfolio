@@ -15,10 +15,12 @@ class Grid extends React.Component {
     return (
       <div className={s.grid}>
         {this.props.grid.map(area => (
-          <div key={area.id}
+          <div
+            key={area.id}
             {...area.content ? Object.assign({
               ref: area.id
-            }, area.attributes) : area.attributes}>
+            }, area.attributes) : area.attributes}
+          >
             {area.content}
           </div>
         ))}
@@ -28,7 +30,7 @@ class Grid extends React.Component {
 }
 
 Grid.propTypes = {
-  grid: React.PropTypes.array.isRequired
+  grid: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
 };
 
 export default Grid;

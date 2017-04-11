@@ -1,7 +1,6 @@
 import React from 'react';
 import smoothScroll from 'smooth-scroll';
 import IconAngleDown from 'components/Icons/AngleDown';
-import { windowScroll } from 'helpers/globalEvents';
 import s from './Hero.css';
 import bgImage from './assets/hero-bg.jpg';
 
@@ -10,11 +9,11 @@ class Hero extends React.Component {
     super();
 
     this.r_t = (
-      <span className={s.headlineKerningFixMartijn}></span>
+      <span className={s.headlineKerningFixMartijn} />
     );
 
     this.r_h = (
-      <span className={s.headlineKerningFixHasperhoven}></span>
+      <span className={s.headlineKerningFixHasperhoven} />
     );
 
     smoothScroll.init({
@@ -59,7 +58,7 @@ class Hero extends React.Component {
   render() {
     return (
       <div ref="hero" className={s.hero}>
-        <img ref="bgImage" src={bgImage} className="is-hidden" />
+        <img ref="bgImage" role="presentation" src={bgImage} className="is-hidden" />
         <div className={s.backgroundCover} />
         <div className={s.backgroundGradient} />
         <div className={s.table}>
@@ -73,16 +72,22 @@ class Hero extends React.Component {
             </h2>
           </div>
         </div>
-        <a ref="arrowDown"
+        <a
+          ref="arrowDown"
           href="#aboutme"
           className={s.action}
           data-scroll
-          data-fade-delay="900">
+          data-fade-delay="900"
+        >
           <IconAngleDown attributes={{ className: s.actionIcon }} />
         </a>
       </div>
     );
   }
 }
+
+Hero.propTypes = {
+  homeFadeIn: React.PropTypes.func
+};
 
 export default Hero;

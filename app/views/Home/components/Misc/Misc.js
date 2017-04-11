@@ -1,14 +1,12 @@
 import React from 'react';
 import Section from 'components/Section';
 import Grid from 'components/Grid';
-import Card from 'components/Card';
-import MusicPlayer from './components/MusicPlayer';
-import IconForward from 'components/Icons/Forward';
-import IconPlay from 'components/Icons/Play';
-import s from './Misc.css';
 import sGrid from 'components/Grid/Grid.css';
-import { overlayToggles } from 'components/Overlay';
 import { uniqueId } from 'helpers/uniqueId';
+import Card from 'components/Card';
+import IconPlay from 'components/Icons/Play';
+import MusicPlayer from './components/MusicPlayer';
+import s from './Misc.css';
 
 class Misc extends React.Component {
   constructor() {
@@ -48,7 +46,8 @@ class Misc extends React.Component {
             <MusicPlayer
               src="./assets/static/mp3/Execute.mp3"
               title="Execute"
-              className={s.execute} />
+              className={s.execute}
+            />
           </Card>
         )
       },
@@ -60,10 +59,12 @@ class Misc extends React.Component {
         },
         content: (
           <Card colSpan={2}>
-            <a className={s.lookbook}
+            <a
+              className={s.lookbook}
               href="https://www.youtube.com/watch?v=vw2hjGJaZd4"
               target="_blank"
-              rel="noopener nofollow">
+              rel="noopener noreferrer"
+            >
               <span className={s.lookbookPlayCircle}>
                 <IconPlay attributes={{ className: s.lookbookPlayIcon }} />
               </span>
@@ -94,7 +95,8 @@ class Misc extends React.Component {
             <MusicPlayer
               src="./assets/static/mp3/Bordering.mp3"
               title="Bordering"
-              className={s.bordering} />
+              className={s.bordering}
+            />
           </Card>
         )
       },
@@ -124,10 +126,12 @@ class Misc extends React.Component {
         },
         content: (
           <Card colSpan={2}>
-            <a className={s.lipsticks}
+            <a
+              className={s.lipsticks}
               href="https://www.youtube.com/watch?v=vGuDJddHkwM"
               target="_blank"
-              rel="noopener nofollow">
+              rel="noopener noreferrer"
+            >
               <span className={s.lipsticksPlayCircle}>
                 <IconPlay attributes={{ className: s.lipsticksPlayIcon }} />
               </span>
@@ -152,7 +156,8 @@ class Misc extends React.Component {
             <MusicPlayer
               src="./assets/static/mp3/Ha.mp3"
               title="Ha!"
-              className={s.ha} />
+              className={s.ha}
+            />
           </Card>
         )
       },
@@ -164,11 +169,12 @@ class Misc extends React.Component {
       <Section
         title={this.title}
         description={this.description}
-        labels={this.labels}>
+        labels={this.labels}
+      >
         <Grid grid={this.grid} />
       </Section>
     );
   }
-};
+}
 
 export default Misc;

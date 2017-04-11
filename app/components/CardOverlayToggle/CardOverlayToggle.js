@@ -1,8 +1,7 @@
 import React from 'react';
-import s from './CardOverlayToggle.css';
 import IconForward from 'components/Icons/Forward';
-
 import { overlayToggles } from 'components/Overlay';
+import s from './CardOverlayToggle.css';
 
 class CardOverlayToggle extends React.Component {
   componentDidMount() {
@@ -11,9 +10,11 @@ class CardOverlayToggle extends React.Component {
 
   render() {
     return (
-      <a ref={this.props.id}
+      <a
+        ref={this.props.id}
         className={s.cardOverlayMask}
-        data-overlay-id={this.props.id}>
+        data-overlay-id={this.props.id}
+      >
         <div className={`${s.cardOverlayMaskImage} ${this.props.className}`} />
         <div className={s.cardOverlayMaskMask}>
           <div className={s.cardOverlayMaskAction}>

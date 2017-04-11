@@ -3,7 +3,7 @@ const getTransitionEnd = () => {
     return false;
   }
 
-  let el = document.createElement('div');
+  const el = document.createElement('div');
 
   const TransitionEndEvent = {
     WebkitTransition: 'webkitTransitionEnd',
@@ -12,7 +12,7 @@ const getTransitionEnd = () => {
     transition: 'transitionend'
   };
 
-  for (let name in TransitionEndEvent) {
+  for (const name in TransitionEndEvent) {
     if (el.style[name] !== undefined) {
       return TransitionEndEvent[name];
     }
@@ -22,12 +22,12 @@ const getTransitionEnd = () => {
 };
 
 const transitionEndSupport = getTransitionEnd();
-const transitionEnd = transitionEndSupport ? transitionEndSupport : 'transitionend';
+const transitionEnd = transitionEndSupport || 'transitionend';
 
-EventTarget.prototype.transitionEndFallback = function(duration) {
+EventTarget.prototype.transitionEndFallback = function (duration) {
   if (transitionEndSupport) return this;
 
-  let transitionendEvent = document.createEvent('TransitionEvent');
+  const transitionendEvent = document.createEvent('TransitionEvent');
   transitionendEvent.initEvent('transitionend', true, true);
 
   window.setTimeout(() => {
@@ -37,7 +37,7 @@ EventTarget.prototype.transitionEndFallback = function(duration) {
   return this;
 };
 
-EventTarget.prototype.onTransitionEnd = function(fn, duration) {
+EventTarget.prototype.onTransitionEnd = function (fn, duration) {
   const transitionEndListener = fn => {
     if (this === event.target) {
       this.removeEventListener(transitionEnd, transitionEndListenerWithFallback);

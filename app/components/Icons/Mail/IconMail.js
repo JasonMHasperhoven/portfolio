@@ -9,4 +9,11 @@ const IconMail = ({ attributes }) => (
   </svg>
 );
 
+IconMail.propTypes = {
+  attributes: React.PropTypes.objectOf(React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ]))
+};
+
 export default IconMail;

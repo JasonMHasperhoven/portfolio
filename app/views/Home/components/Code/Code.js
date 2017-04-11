@@ -4,11 +4,9 @@ import Grid from 'components/Grid';
 import Card from 'components/Card';
 import CardOverlayToggle from 'components/CardOverlayToggle';
 import IconGithub from 'components/Icons/Github';
-import IconForward from 'components/Icons/Forward';
-import s from './Code.css';
 import sGrid from 'components/Grid/Grid.css';
-import { overlayToggles } from 'components/Overlay';
 import { uniqueId } from 'helpers/uniqueId';
+import s from './Code.css';
 
 class Code extends React.Component {
   constructor() {
@@ -17,9 +15,11 @@ class Code extends React.Component {
     this.title = 'Code';
 
     this.intjLink = (
-      <a href="https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator"
+      <a
+        href="https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+      >
         INTJ
       </a>
     );
@@ -67,10 +67,12 @@ class Code extends React.Component {
         content: (
           <Card className={s.colorFunction}>
             <div className={s.colorFunctionImage} />
-            <a href="https://github.com/JasonMHasperhoven/sass-scss-function-color-weight"
+            <a
+              href="https://github.com/JasonMHasperhoven/sass-scss-function-color-weight"
               target="_blank"
               rel="noopener noreferrer"
-              className={s.colorFunctionWrapper}>
+              className={s.colorFunctionWrapper}
+            >
               <div className={s.colorFunctionTitle}>
                 <IconGithub attributes={{ className: s.colorFunctionIcon }} /> scss-color-weight
               </div>
@@ -97,16 +99,19 @@ class Code extends React.Component {
         content: (
           <Card colSpan={2} className={s.multiModal}>
             <div className={s.multiModalImage} />
-            <a href="https://github.com/JasonMHasperhoven/MultiModal"
+            <a
+              href="https://github.com/JasonMHasperhoven/MultiModal"
               target="_blank"
               rel="noopener noreferrer"
-              className={s.multiModalWrapper}>
+              className={s.multiModalWrapper}
+            >
               <div className={s.multiModalTitle}>
                 <IconGithub attributes={{ className: s.multiModalIcon }} /> MultiModal
               </div>
               <div className={s.multiModalDesc}>
                 <p>
-                  A typescript/javascript library which supports multiple modals, is mobile friendly and has fancy animations.
+                  A typescript/javascript library which supports multiple modals,
+                  is mobile friendly and has fancy animations.
                 </p>
                 <p>
                   Built with #GSAP
@@ -131,9 +136,11 @@ class Code extends React.Component {
         content: (
           <Card className={s.railsModal}>
             <div className={s.railsModalImage} />
-            <a href="https://github.com/JasonMHasperhoven/rails-modal-component"
+            <a
+              href="https://github.com/JasonMHasperhoven/rails-modal-component"
               target="_blank"
-              rel="noopener noreferrer" className={s.railsModalWrapper}>
+              rel="noopener noreferrer" className={s.railsModalWrapper}
+            >
               <div className={s.railsModalTitle}>
                 <IconGithub attributes={{ className: s.railsModalIcon }} /> rails-modal-component
               </div>
@@ -193,12 +200,15 @@ class Code extends React.Component {
         content: (
           <Card className={s.railsDropdownMenu}>
             <div className={s.railsDropdownMenuImage} />
-            <a href="https://github.com/JasonMHasperhoven/rails-dropdown-menu-component"
+            <a
+              href="https://github.com/JasonMHasperhoven/rails-dropdown-menu-component"
               target="_blank"
               rel="noopener noreferrer"
-              className={s.railsDropdownMenuWrapper}>
+              className={s.railsDropdownMenuWrapper}
+            >
               <div className={s.railsDropdownMenuTitle}>
-                <IconGithub attributes={{ className: s.railsDropdownMenuIcon }} /> rails-dropdown-menu-component
+                <IconGithub attributes={{ className: s.railsDropdownMenuIcon }} />
+                rails-dropdown-menu-component
               </div>
               <div className={s.railsDropdownMenuDesc}>
                 A dropdown menu component for Ruby on Rails.
@@ -260,9 +270,11 @@ class Code extends React.Component {
         content: (
           <Card className={s.onTransitionEnd}>
             <div className={s.onTransitionEndImage} />
-            <a href="https://github.com/JasonMHasperhoven/onTransitionEnd"
+            <a
+              href="https://github.com/JasonMHasperhoven/onTransitionEnd"
               target="_blank"
-              rel="noopener noreferrer" className={s.onTransitionEndWrapper}>
+              rel="noopener noreferrer" className={s.onTransitionEndWrapper}
+            >
               <div className={s.onTransitionEndTitle}>
                 <IconGithub attributes={{ className: s.onTransitionEndIcon }} /> onTransitionEnd
               </div>
@@ -291,10 +303,12 @@ class Code extends React.Component {
         content: (
           <Card className={s.portfolio}>
             <div className={s.portfolioImage} />
-            <a href="https://github.com/JasonMHasperhoven/portfolio"
+            <a
+              href="https://github.com/JasonMHasperhoven/portfolio"
               target="_blank"
               rel="noopener noreferrer"
-              className={s.portfolioWrapper}>
+              className={s.portfolioWrapper}
+            >
               <div className={s.portfolioTitle}>
                 <IconGithub attributes={{ className: s.portfolioIcon }} /> portfolio
               </div>
@@ -314,11 +328,12 @@ class Code extends React.Component {
       <Section
         title={this.title}
         description={this.description}
-        labels={this.labels}>
+        labels={this.labels}
+      >
         <Grid grid={this.grid} />
       </Section>
     );
   }
-};
+}
 
 export default Code;

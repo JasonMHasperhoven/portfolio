@@ -10,7 +10,7 @@ const setMedia = () => {
     md: Modernizr.mq('(min-width: 769px)'),
     lg: Modernizr.mq('(min-width: 1127px)')
   };
-}
+};
 
 setMedia();
 

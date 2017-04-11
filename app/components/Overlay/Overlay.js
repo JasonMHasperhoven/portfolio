@@ -1,6 +1,6 @@
 import React from 'react';
-import s from './Overlay.css';
 import 'helpers/transitionEnd';
+import s from './Overlay.css';
 
 export const overlayToggles = [];
 
@@ -8,7 +8,7 @@ class Overlay extends React.Component {
   constructor() {
     super();
 
-    this.scrollbarWidth = window.innerWidth - document.documentElement.clientWidth + 'px';
+    this.scrollbarWidth = `${window.innerWidth - document.documentElement.clientWidth}px`;
     this.transitionDurationIn = 2000;
     this.transitionDurationOut = 1250;
 
@@ -30,7 +30,7 @@ class Overlay extends React.Component {
   }
 
   animateIn(event) {
-    if (event.currentTarget.getAttribute('data-overlay-id') == this.props.id) {
+    if (event.currentTarget.getAttribute('data-overlay-id') === this.props.id) {
       this.setState({
         willChange: true
       });
@@ -90,7 +90,7 @@ class Overlay extends React.Component {
       }
 
       return className;
-    }
+    };
 
     return (
       <section ref="section" className={getClassName()}>

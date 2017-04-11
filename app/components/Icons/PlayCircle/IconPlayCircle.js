@@ -6,4 +6,11 @@ const IconPlayCircle = ({ attributes }) => (
   </svg>
 );
 
+IconPlayCircle.propTypes = {
+  attributes: React.PropTypes.objectOf(React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ]))
+};
+
 export default IconPlayCircle;

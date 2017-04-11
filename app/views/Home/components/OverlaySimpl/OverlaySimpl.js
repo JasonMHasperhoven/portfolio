@@ -2,9 +2,9 @@ import React from 'react';
 import Overlay from 'components/Overlay';
 import IconPlayCircle from 'components/Icons/PlayCircle';
 import Card from 'components/Card';
-import s from './OverlaySimpl.css';
 import sSection from 'components/Section/Section.css';
 import sGrid from 'components/Grid/Grid.css';
+import s from './OverlaySimpl.css';
 import profileMobile from './assets/profile-mobile@1x.png';
 import profileDesktop from './assets/profile-desktop@1x.png';
 import userDashboardMobile from './assets/user-dashboard-mobile@1x.png';
@@ -40,7 +40,7 @@ class OverlaySimpl extends React.Component {
 
   render() {
     return (
-      <Overlay id="simpl" animateInCallback={this.loadBelowTheFold.bind(this)}>
+      <Overlay id="simpl" animateInCallback={() => this.loadBelowTheFold()}>
         <article>
           <section>
             <h2>
@@ -49,7 +49,11 @@ class OverlaySimpl extends React.Component {
             <p>
               My most recent work is done at Simpl. I work as the lead frontend
               developer for the website and the transaction. Head over to{' '}
-              <a href="https://www.getsimpl.com/" target="_blank" rel="noopener nofollow">
+              <a
+                href="https://www.getsimpl.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Simpl’s website
               </a>, to see my work.
             </p>
@@ -113,7 +117,7 @@ class OverlaySimpl extends React.Component {
                     The user isn’t approved and then show the get invite form.
                   </li>
                 </ul>
-                <div ref="video" className={s.login} onClick={this.loadVideo.bind(this)}>
+                <div ref="video" className={s.login} onClick={() => this.loadVideo()}>
                   {this.state.videoLoaded ? (
                     <video width="100%" autoPlay loop controls>
                       <source src="./assets/static/login-flow.mp4" type="video/mp4" />
@@ -135,34 +139,42 @@ class OverlaySimpl extends React.Component {
                 <div className={sSection.row}>
                   <div className={sGrid.areaSingle}>
                     <Card>
-                      <a className={s.profileMobile}
+                      <a
+                        className={s.profileMobile}
                         href={profileMobile}
                         target="_blank"
-                        rel="noopener nofollow" />
+                        rel="noopener noreferrer"
+                      />
                     </Card>
                   </div>
                   <div className={sGrid.areaSingle}>
                     <Card>
-                      <a className={s.profileDesktop}
+                      <a
+                        className={s.profileDesktop}
                         href={profileDesktop}
                         target="_blank"
-                        rel="noopener nofollow" />
+                        rel="noopener noreferrer"
+                      />
                     </Card>
                   </div>
                   <div className={sGrid.areaSingle}>
                     <Card>
-                      <a className={s.userDashboardMobile}
+                      <a
+                        className={s.userDashboardMobile}
                         href={userDashboardMobile}
                         target="_blank"
-                        rel="noopener nofollow" />
+                        rel="noopener noreferrer"
+                      />
                     </Card>
                   </div>
                   <div className={sGrid.areaSingle}>
                     <Card>
-                      <a className={s.userDashboardDesktop}
+                      <a
+                        className={s.userDashboardDesktop}
                         href={userDashboardDesktop}
                         target="_blank"
-                        rel="noopener nofollow" />
+                        rel="noopener noreferrer"
+                      />
                     </Card>
                   </div>
                 </div>
@@ -174,18 +186,22 @@ class OverlaySimpl extends React.Component {
                 <div className={sSection.row}>
                   <div className={sGrid.areaSingle}>
                     <Card>
-                      <a className={s.transactions}
+                      <a
+                        className={s.transactions}
                         href={transactions}
                         target="_blank"
-                        rel="noopener nofollow" />
+                        rel="noopener noreferrer"
+                      />
                     </Card>
                   </div>
                   <div className={sGrid.areaSingle}>
                     <Card>
-                      <a className={s.documentation}
+                      <a
+                        className={s.documentation}
                         href={documentation}
                         target="_blank"
-                        rel="noopener nofollow" />
+                        rel="noopener noreferrer"
+                      />
                     </Card>
                   </div>
                 </div>
@@ -198,8 +214,8 @@ class OverlaySimpl extends React.Component {
           )}
         </article>
       </Overlay>
-    )
+    );
   }
-};
+}
 
 export default OverlaySimpl;

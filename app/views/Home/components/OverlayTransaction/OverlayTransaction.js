@@ -42,7 +42,7 @@ class OverlayTransaction extends React.Component {
           Here’s a prototype of our transaction flow.<br />
           Click on the video below to see the demo!
         </p>
-        <div ref="video" className={s.transaction} onClick={this.loadVideo.bind(this)}>
+        <div ref="video" className={s.transaction} onClick={() => this.loadVideo()}>
           {this.state.videoLoaded ? (
             <video width="100%" autoPlay loop controls>
               <source src="./assets/static/transaction.mp4" type="video/mp4" />
@@ -59,6 +59,6 @@ class OverlayTransaction extends React.Component {
       </Overlay>
     );
   }
-};
+}
 
 export default OverlayTransaction;

@@ -7,8 +7,9 @@ class Selfie extends React.Component {
     this.refs.frame1.classList.add('is-visible');
 
     windowScroll.push(() => {
-      let frameMiddle = this.refs.frame1.getBoundingClientRect().top + (
-        (this.refs.frame1.getBoundingClientRect().bottom - this.refs.frame1.getBoundingClientRect().top) / 2
+      const frameMiddle = this.refs.frame1.getBoundingClientRect().top + (
+        (this.refs.frame1.getBoundingClientRect().bottom -
+         this.refs.frame1.getBoundingClientRect().top) / 2
       );
 
       if (window.innerHeight * .6 > frameMiddle) {

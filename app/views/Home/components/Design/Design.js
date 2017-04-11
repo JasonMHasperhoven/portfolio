@@ -1,14 +1,13 @@
 import React from 'react';
 import Section from 'components/Section';
 import Grid from 'components/Grid';
+import sGrid from 'components/Grid/Grid.css';
 import Card from 'components/Card';
 import CardOverlayToggle from 'components/CardOverlayToggle';
-import IconForward from 'components/Icons/Forward';
+import { uniqueId } from 'helpers/uniqueId';
 import DropdownMenu from './components/DropdownMenu';
 import Dropdown from './components/Dropdown';
 import s from './Design.css';
-import sGrid from 'components/Grid/Grid.css';
-import { uniqueId } from 'helpers/uniqueId';
 
 class Design extends React.Component {
   constructor() {
@@ -75,20 +74,23 @@ class Design extends React.Component {
         },
         content: (
           <Card className={s.cardDropdownMenu} colSpan={2}>
-            <DropdownMenu toggle="Dropdown menu" items={[
-              {
-                value: 'Page one',
-                href: './'
-              },
-              {
-                value: 'Page two',
-                href: './'
-              },
-              {
-                value: 'Page three',
-                href: './'
-              }
-            ]} />
+            <DropdownMenu
+              toggle="Dropdown menu"
+              items={[
+                {
+                  value: 'Page one',
+                  href: './'
+                },
+                {
+                  value: 'Page two',
+                  href: './'
+                },
+                {
+                  value: 'Page three',
+                  href: './'
+                }
+              ]}
+            />
           </Card>
         )
       },
@@ -153,23 +155,25 @@ class Design extends React.Component {
         },
         content: (
           <Card className={s.cardDropdown} colSpan={2}>
-            <Dropdown items={[
-              {
-                value: 'Dropdown item'
-              },
-              {
-                value: 'Ttem two',
-                href: './'
-              },
-              {
-                value: 'Ttem three',
-                href: './'
-              },
-              {
-                value: 'Ttem four',
-                href: './'
-              }
-            ]} />
+            <Dropdown
+              items={[
+                {
+                  value: 'Dropdown item'
+                },
+                {
+                  value: 'Ttem two',
+                  href: './'
+                },
+                {
+                  value: 'Ttem three',
+                  href: './'
+                },
+                {
+                  value: 'Ttem four',
+                  href: './'
+                }
+              ]}
+            />
           </Card>
         )
       },
@@ -200,11 +204,12 @@ class Design extends React.Component {
       <Section
         title={this.title}
         description={this.description}
-        labels={this.labels}>
+        labels={this.labels}
+      >
         <Grid grid={this.grid} />
       </Section>
     );
   }
-};
+}
 
 export default Design;
