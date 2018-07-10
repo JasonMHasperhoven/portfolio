@@ -13,7 +13,7 @@ windowScroll.push(() => {
   fadeElements.forEach(element => {
     if (!media.md && element.getAttribute('data-fade-gt-md')) return;
 
-    if (window.innerHeight * .8 > element.getBoundingClientRect().top) {
+    if (window.innerHeight * 0.8 > element.getBoundingClientRect().top) {
       if (element.classList.contains('is-visible')) return;
 
       let delay = 0;
