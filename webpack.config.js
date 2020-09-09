@@ -10,7 +10,7 @@ module.exports = {
   },
   context: __dirname,
   output: {
-    path: path.join(__dirname, 'assets'),
+    path: path.join(__dirname, 'public', 'assets'),
     filename: '[name].js',
     publicPath: DEV ? '/martijnhasperhoven/assets/' : '/assets/'
   },
