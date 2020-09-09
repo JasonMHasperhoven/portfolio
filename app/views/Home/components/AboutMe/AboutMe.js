@@ -17,7 +17,7 @@ class AboutMe extends React.Component {
       this.refs.desc2,
       this.refs.desc3,
       this.refs.icon1,
-      this.refs.icon2,
+      // this.refs.icon2,
       this.refs.icon3,
       this.refs.selfie
     );
