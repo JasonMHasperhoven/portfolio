@@ -63,7 +63,7 @@ class AboutMe extends React.Component {
                   <IconMail />
                 </a>
               </span>
-              <span className="is-inline-block" ref="icon2" data-fade-gt-md data-fade-delay="100">
+              {/* <span className="is-inline-block" ref="icon2" data-fade-gt-md data-fade-delay="100">
                 <a
                   href="https://www.facebook.com/takingdownmusic"
                   target="_blank"
@@ -72,7 +72,7 @@ class AboutMe extends React.Component {
                 >
                   <IconFacebook />
                 </a>
-              </span>
+              </span> */}
               <span className="is-inline-block" ref="icon3" data-fade-gt-md data-fade-delay="200">
                 <a
                   href="https://github.com/JasonMHasperhoven"
