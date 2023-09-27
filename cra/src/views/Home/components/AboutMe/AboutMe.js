@@ -1,8 +1,9 @@
 import React from "react";
 import Section from "../../../../components/Section";
 import fadeElements from "../../../../helpers/fadeElements";
-import IconFacebook from "../../../../components/Icons/Facebook";
+import IconLinkedIn from "../../../../components/Icons/LinkedIn";
 import IconGithub from "../../../../components/Icons/Github";
+import IconDribbble from "../../../../components/Icons/Dribbble";
 import IconMail from "../../../../components/Icons/Mail";
 import Selfie from "./components/Selfie";
 import s from "./AboutMe.module.scss";
@@ -37,26 +38,19 @@ class AboutMe extends React.Component {
             <div className={s.desc}>
               <p ref="desc1" className={s.copy} data-fade-gt-md>
                 {up("My name Martijn Hasperhoven")}, also known as {up("Jason")}{" "}
-                and I am a dutch {up("front-end developer")}, with a strong eye
-                for design.
+                and I am a dutch {up("product ui/ux designer")} with a technical
+                twist.
               </p>
               <p ref="desc2" className={s.copy} data-fade-gt-md>
-                I{"’"}m currently leading the front-end team at{" "}
-                <a
-                  href="https://www.consensys.net/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={s.copyLink}
-                >
-                  ConsenSys
-                </a>{" "}
-                in Dubai.
+                Alongside my decade of experience as a software engineer and
+                product manager, I always found ways to contribute to designs as
+                it’s my passion. This is why I’m now making the shift to
+                full-time designer.
               </p>
               <p ref="desc3" className={s.copy} data-fade-gt-md>
-                My philosophy is to get things {up("pixel-perfect")} using
-                cutting-edge technologies. I{"’"}m looking to make awesome
-                dreams into reality and grow personally and professionally
-                anywhere in the world.
+                My philosophy is to get things {up("pixel-perfect")} and deliver
+                a {up("polished")} user experience. I love building products
+                that people {up("love")}.
               </p>
             </div>
             <div className={s.actions}>
@@ -68,16 +62,21 @@ class AboutMe extends React.Component {
                   <IconMail />
                 </a>
               </span>
-              {/* <span className="is-inline-block" ref="icon2" data-fade-gt-md data-fade-delay="100">
+              <span
+                className="is-inline-block"
+                ref="icon2"
+                data-fade-gt-md
+                data-fade-delay="100"
+              >
                 <a
-                  href="https://www.facebook.com/takingdownmusic"
+                  href="https://www.linkedin.com/in/jason-m-hasperhoven/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={s.icon}
                 >
-                  <IconFacebook />
+                  <IconLinkedIn />
                 </a>
-              </span> */}
+              </span>
               <span
                 className="is-inline-block"
                 ref="icon3"
@@ -85,12 +84,12 @@ class AboutMe extends React.Component {
                 data-fade-delay="200"
               >
                 <a
-                  href="https://github.com/JasonMHasperhoven"
+                  href="https://dribbble.com/jason_desixn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={s.icon}
                 >
-                  <IconGithub />
+                  <IconDribbble />
                 </a>
               </span>
             </div>

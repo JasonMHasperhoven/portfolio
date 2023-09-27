@@ -1,0 +1,135 @@
+$dropdown-height: 57px;
+
+:root {
+  --height: 57px;
+  --transition: all .4s;
+}
+
+.dropdown {
+  z-index: 1;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+
+  width: 206px;
+  height: $dropdown-height;
+  padding: 0;
+  border: 0;
+
+  transition: var(--transition);
+
+  &:focus .hamburger,
+  &:hover .hamburger {
+    transform: translateY(4px);
+
+    &Line {
+      border-color: #bbb;
+
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transform: translateY(($dropdown-height - 3) * ($i - 1));
+        }
+      }
+    }
+  }
+
+  &:focus .list,
+  &:hover .list {
+    background: #fff;
+    /*border-color: $color-border-dark;*/
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+
+    @for $i from 1 through 4 {
+      &[data-dropdown-items="#{$i}"] {
+        height: $dropdown-height * $i;
+      }
+    }
+  }
+
+  &:focus .item,
+  &:hover .item {
+    line-height: $dropdown-height;
+    height: $dropdown-height;
+    overflow: hidden;
+
+    opacity: 1;
+
+    &Selected {
+      border-left: 1px solid #00d1c1;
+    }
+  }
+}
+
+.hamburger {
+  position: absolute;
+  top: 24px;
+  left: 16px;
+
+  transition: transform .4s;
+  transform: translateY(0);
+
+  &Line {
+    display: block;
+    border-bottom: 1px solid transparent;
+    height: 1px;
+    width: 12px;
+    margin-bottom: 2px;
+    color: #fff;
+    transition: transform .4s, border-color .4s;
+
+    &:nth-child(-n+3) {
+      border-color: #bbb;
+    }
+  }
+}
+
+
+.list {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+  width: 100%;
+  height: $dropdown-height;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
+
+  transition: var(--transition);
+}
+
+.item {
+  display: block;
+
+  padding: 0 16px 0 38px;
+  border-left: 1px solid transparent;
+
+  line-height: $dropdown-height - 2;
+  font-size: 14px;
+  text-align: left;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+
+  cursor: pointer;
+  opacity: 0;
+  transition: var(--transition);
+
+  &:first-child {
+    opacity: 1;
+  }
+
+  &:focus,
+  &:hover {
+    background: #f9f9f9;
+    border-left-color: #00d1c1;
+
+    color: #333;
+  }
+
+  &Selected {
+    composes: item;
+  }
+}

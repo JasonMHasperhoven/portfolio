@@ -38,5 +38,8 @@
   "scripts": {
     "build": "NODE_ENV=production $(npm bin)/webpack",
     "lint:js": "./node_modules/.bin/eslint app/components app/views"
+  },
+  "dependencies": {
+    "d3-dispatch": "^3.0.1"
   }
 }

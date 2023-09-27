@@ -7,6 +7,7 @@ import { setFadeElements } from "../../helpers/fadeElements";
 import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
 import Design from "./components/Design";
+import DesignShowcase from "./components/DesignShowcase";
 import Code from "./components/Code";
 import Misc from "./components/Misc";
 import Loading from "./components/Loading";
@@ -15,6 +16,7 @@ import OverlayTransaction from "./components/OverlayTransaction";
 import OverlayTechnologies from "./components/OverlayTechnologies";
 import OverlayOptimization from "./components/OverlayOptimization";
 import OverlaySimpl from "./components/OverlaySimpl";
+import OverlayImg from "./components/OverlayImg";
 
 class Home extends React.Component {
   constructor() {
@@ -52,15 +54,17 @@ class Home extends React.Component {
         <AboutMe />
         {this.state.isLoaded ? (
           <div>
+            <DesignShowcase />
             <Design />
-            <Code />
-            <Misc />
+            {/* <Code /> */}
+            {/* <Misc /> */}
             <Footer />
             <OverlayArticles />
             <OverlayOptimization />
             <OverlayTransaction />
             <OverlayTechnologies />
             <OverlaySimpl />
+            <OverlayImg />
           </div>
         ) : (
           <Loading />

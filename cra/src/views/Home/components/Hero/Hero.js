@@ -68,10 +68,11 @@ class Hero extends React.Component {
         <div className={s.table}>
           <div className={s.tableCell}>
             <h1 ref="headline" className={s.headline}>
-              mar{this.r_t}tijn hasper{this.r_h}hoven
+              jason desixn.
+              {/* mar{this.r_t}tijn hasper{this.r_h}hoven */}
             </h1>
             <h2 ref="subline" className={s.subline} data-fade-delay="300">
-              ui developer.
+              product ui/ux designer.
             </h2>
           </div>
         </div>

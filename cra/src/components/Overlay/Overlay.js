@@ -43,7 +43,7 @@ class Overlay extends React.Component {
           active: true,
         });
 
-        this.refs.wrapper.onTransitionEnd(() => {
+        this.refs.wrapper?.onTransitionEnd(() => {
           document.documentElement.style.overflow = "hidden";
           document.body.style.marginRight = this.scrollbarWidth;
           this.refs.section.style.overflowY = "auto";
@@ -54,6 +54,11 @@ class Overlay extends React.Component {
           }
         }, this.transitionDurationIn);
       }, 50);
+    }
+
+    const imgid = event.currentTarget.getAttribute("data-overlay-imgid");
+    if (imgid) {
+      window.__imgid = imgid;
     }
   }
 
@@ -73,6 +78,7 @@ class Overlay extends React.Component {
         willChange: false,
         closing: false,
       });
+      window.__imgid = null;
     }, this.transitionDurationIn);
   }
 

@@ -15,8 +15,13 @@ class CardOverlayToggle extends React.Component {
         ref={this.props.id}
         className={s.cardOverlayMask}
         data-overlay-id={this.props.id}
+        data-overlay-imgid={this.props.imgId}
       >
-        <div className={`${s.cardOverlayMaskImage} ${this.props.className}`} />
+        {this.props.img || (
+          <div
+            className={`${s.cardOverlayMaskImage} ${this.props.className}`}
+          />
+        )}
         <div className={s.cardOverlayMaskMask}>
           <div className={s.cardOverlayMaskAction}>
             <IconForward attributes={{ className: s.cardOverlayMaskIcon }} />
@@ -29,7 +34,7 @@ class CardOverlayToggle extends React.Component {
 
 CardOverlayToggle.propTypes = {
   id: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default CardOverlayToggle;
