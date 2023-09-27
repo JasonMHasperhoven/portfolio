@@ -1,45 +1,39 @@
 {
-  "name": "martijnhasperhoven",
-  "version": "1.0.0",
-  "author": "Martijn Hasperhoven",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.17.0",
-    "babel-eslint": "^7.1.0",
-    "babel-loader": "^6.2.5",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-react-optimize": "^1.0.1",
-    "babel-preset-stage-0": "^6.22.0",
-    "css-loader": "^0.26.1",
-    "eslint": "^3.9.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.6.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.9.0",
-    "postcss": "^5.2.7",
-    "postcss-cssnext": "^2.9.0",
-    "postcss-for": "^2.1.1",
-    "postcss-loader": "^1.2.1",
-    "precss": "^1.4.0",
-    "react": "^15.4.1",
-    "react-addons-css-transition-group": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "sass-loader": "^3.2.3",
-    "smooth-scroll": "github:cferdinandi/smooth-scroll",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.14.0"
+  "name": "cra",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "sass": "^1.68.0",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build": "NODE_ENV=production $(npm bin)/webpack",
-    "lint:js": "./node_modules/.bin/eslint app/components app/views"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "dependencies": {
-    "d3-dispatch": "^3.0.1"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
