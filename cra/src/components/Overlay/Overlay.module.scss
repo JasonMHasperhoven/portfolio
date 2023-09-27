@@ -1,0 +1,200 @@
+@import "../../helpers/variables";
+@import "../../helpers/mediaQueries";
+
+.overlay {
+  display: none;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &WillChange {
+    display: block;
+
+    .wrapper {
+      will-change: opacity;
+    }
+
+    .contentWrapper {
+      will-change: transform;
+    }
+
+    .close {
+      will-change: opacity;
+    }
+  }
+
+  &Active {
+    composes: overlay;
+
+    .wrapper {
+      opacity: 1;
+      transition: opacity 0.75s ease;
+    }
+
+    .contentWrapper {
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.75s ease;
+    }
+
+    .close {
+      opacity: 0.7;
+      transition: opacity 0.5s ease 0.75s;
+    }
+  }
+
+  &Closing {
+    composes: overlay;
+
+    .wrapper {
+      opacity: 0;
+      transition: opacity 0.75s ease;
+    }
+
+    .contentWrapper {
+      transform: translate3d(0, 100%, 0);
+      transition: transform 0.75s ease;
+    }
+
+    .close {
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+  }
+}
+
+.contentWrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  transform: translate3d(0, 25%, 0);
+
+  h2,
+  h3 {
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.4em;
+  }
+
+  h2 {
+    font-size: 32px;
+
+    @include media-md {
+      font-size: 42px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+
+    @include media-md {
+      font-size: 32px;
+    }
+  }
+
+  section {
+    margin-bottom: 1.4em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    font-size: 16px;
+
+    @include media-md {
+      font-size: 17px;
+    }
+
+    @include media-lg {
+      font-size: 18px;
+    }
+  }
+
+  a {
+    color: #e84ba0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover {
+      color: #c3256c;
+      border-color: #c3256c;
+    }
+  }
+}
+
+.wrapper {
+  background: linear-gradient(135deg, #512452, #691933);
+  opacity: 0;
+
+  padding: $spacing * 0.75;
+
+  @include media-md {
+    padding: $spacing * 2;
+  }
+
+  @include media-lg {
+    padding: ($spacing * 3.5) ($spacing * 5);
+  }
+}
+
+.close {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: $spacing + ($spacing * 0.75);
+  right: $spacing + ($spacing * 0.75);
+  border-radius: 50%;
+  border: 1px solid #582047;
+  width: 32px;
+  height: 32px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  opacity: 0;
+  color: #582047;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &Active {
+    transition: opacity 0.2s !important;
+  }
+
+  @include media-md {
+    top: $spacing * 2;
+    right: $spacing * 2;
+    width: 44px;
+    height: 44px;
+    font-size: 32px;
+    line-height: 42px;
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+.title {
+  composes: title from "../../components/Section/Section.module.scss";
+}
+
+.card {
+  min-height: 620px;
+  background: #fef3ff;
+  border-radius: 2px;
+  box-shadow: 0 16px 32px -14px rgba(0, 0, 0, 0.6);
+  color: #5f4954;
+
+  padding: $spacing;
+
+  @include media-md {
+    padding: $spacing * 2;
+  }
+
+  @include media-lg {
+    padding: $spacing * 3;
+  }
+}

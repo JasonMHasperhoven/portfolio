@@ -1,6 +1,6 @@
-import React from 'react';
-import IconForward from 'components/Icons/Forward';
-import s from './Square.css';
+import React from "react";
+import IconForward from "../../../../../../components/Icons/Forward";
+import s from "./Square.css";
 
 const Square = ({ title, href, className }) => (
   <a
@@ -10,9 +10,7 @@ const Square = ({ title, href, className }) => (
     className={`${className} ${s.square}`}
   >
     <div className={s.mask}>
-      <div className={s.title}>
-        {title}
-      </div>
+      <div className={s.title}>{title}</div>
       <div className={s.action}>
         <IconForward attributes={{ className: s.icon }} />
       </div>
@@ -23,7 +21,7 @@ const Square = ({ title, href, className }) => (
 Square.propTypes = {
   title: React.PropTypes.string,
   href: React.PropTypes.string,
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
 };
 
 export default Square;

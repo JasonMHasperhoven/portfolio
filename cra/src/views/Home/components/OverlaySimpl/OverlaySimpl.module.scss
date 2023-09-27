@@ -1,0 +1,187 @@
+@import "../../../../helpers/mediaQueries";
+@import "../../../../helpers/variables";
+
+.imageBox {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: $spacing;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  @include media-md {
+    padding: $spacing * 2;
+  }
+
+  @include media-lg {
+    padding: $spacing * 3;
+  }
+
+  &:global(.isActive) {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &Img {
+    max-width: 100%;
+  }
+}
+
+.cardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.profileMobile {
+  composes: cardImage;
+  background-image: url("./assets/profile-mobile@1x.png");
+  background-size: cover;
+
+  /*@include media-pixel-ratio-double {
+    background-image: url('./assets/profile-mobile@2x.png');
+  }*/
+}
+
+.profileDesktop {
+  composes: cardImage;
+  background-image: url("./assets/profile-desktop@1x.png");
+  background-size: cover;
+
+  /*@include media-pixel-ratio-double {
+    background-image: url('./assets/profile-desktop@2x.png');
+  }*/
+}
+
+.userDashboardMobile {
+  composes: cardImage;
+  background-image: url("./assets/user-dashboard-mobile@1x.png");
+  background-size: cover;
+
+  /*@include media-pixel-ratio-double {
+    background-image: url('./assets/user-dashboard-mobile@2x.png');
+  }*/
+}
+
+.userDashboardDesktop {
+  composes: cardImage;
+  background-image: url("./assets/user-dashboard-desktop@1x.png");
+  background-size: cover;
+
+  /*@include media-pixel-ratio-double {
+    background-image: url('./assets/user-dashboard-desktop@2x.png');
+  }*/
+}
+
+.transactions {
+  composes: cardImage;
+  background-image: url("./assets/transactions@1x.png");
+  background-size: cover;
+
+  /*@include media-pixel-ratio-double {
+    background-image: url('./assets/transactions@2x.png');
+  }*/
+}
+
+.documentation {
+  composes: cardImage;
+  background-image: url("./assets/documentation@1x.png");
+  background-size: cover;
+
+  /*@include media-pixel-ratio-double {
+    background-image: url('./assets/transactions@2x.png');
+  }*/
+}
+
+.loading {
+  margin-top: $spacing;
+}
+
+.login {
+  position: relative;
+  width: 288px;
+  height: 511px;
+  cursor: pointer;
+  box-shadow: 0 16px 32px -14px rgba(0, 0, 0, 0.4);
+  background: #fff;
+  transform: translateY(0);
+  transition: transform 0.2s;
+  margin-bottom: $spacing;
+  border: 6px solid rgba(95, 29, 62, 0.7);
+  box-sizing: content-box;
+  border-radius: 2px;
+
+  @include media-xs {
+    border-width: 2px;
+    margin-left: -14px;
+  }
+
+  @include media-md {
+    width: 320px;
+    height: 568px;
+    margin-bottom: $spacing * 1.5;
+  }
+
+  @include media-lg {
+    margin-bottom: $spacing * 2;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+
+    .loginBg {
+      opacity: 1;
+    }
+  }
+
+  &Active {
+    cursor: initial;
+  }
+
+  &SeeDemo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -48px;
+    margin-top: -48px;
+    padding: 24px;
+    border-radius: 50%;
+    color: rgb(89, 31, 70);
+    text-align: center;
+  }
+
+  &PlayCircleIcon {
+    display: block;
+  }
+
+  &Bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: opacity 0.5s;
+
+    background-image: url("./assets/login-flow@1x.png");
+    background-size: 288px 511px;
+
+    opacity: 0.8;
+
+    @include media-md {
+      background-size: 320px 568px;
+    }
+
+    @include media-pixel-ratio-double {
+      background-image: url("./assets/login-flow@2x.png");
+    }
+  }
+}

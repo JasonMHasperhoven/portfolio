@@ -1,15 +1,15 @@
-import React from 'react';
-import IconPlay from 'components/Icons/Play';
-import IconPause from 'components/Icons/Pause';
-import IconDownload from 'components/Icons/Download';
-import s from './MusicPlayer.css';
+import React from "react";
+import IconPlay from "../../../../../../components/Icons/Play";
+import IconPause from "../../../../../../components/Icons/Pause";
+import IconDownload from "../../../../../../components/Icons/Download";
+import s from "./MusicPlayer.css";
 
 class MusicPlayer extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      active: false
+      active: false,
     };
   }
 
@@ -17,12 +17,12 @@ class MusicPlayer extends React.Component {
     if (this.state.active) {
       this.refs.audio.pause();
       this.setState({
-        active: false
+        active: false,
       });
     } else {
       this.refs.audio.play();
       this.setState({
-        active: true
+        active: true,
       });
     }
   }
@@ -34,19 +34,17 @@ class MusicPlayer extends React.Component {
         <audio ref="audio" src={this.props.src}>
           Your browser does not support this
         </audio>
-        <div className={s.title}>
-          {this.props.title}
-        </div>
+        <div className={s.title}>{this.props.title}</div>
         <div className={s.actions}>
           <a className={s.playPause} onClick={() => this.playPause()}>
             {this.state.active ? (
-              <IconPause attributes={{ className: '' }} />
+              <IconPause attributes={{ className: "" }} />
             ) : (
-              <IconPlay attributes={{ className: '' }} />
+              <IconPlay attributes={{ className: "" }} />
             )}
           </a>
           <a className={s.download} href={this.props.src}>
-            <IconDownload attributes={{ className: '' }} />
+            <IconDownload attributes={{ className: "" }} />
           </a>
         </div>
       </div>
@@ -57,7 +55,7 @@ class MusicPlayer extends React.Component {
 MusicPlayer.propTypes = {
   title: React.PropTypes.string,
   src: React.PropTypes.string,
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
 };
 
 export default MusicPlayer;

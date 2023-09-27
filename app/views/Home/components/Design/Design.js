@@ -1,49 +1,49 @@
-import React from 'react';
-import Section from 'components/Section';
-import Grid from 'components/Grid';
-import sGrid from 'components/Grid/Grid.css';
-import Card from 'components/Card';
-import CardOverlayToggle from 'components/CardOverlayToggle';
-import { uniqueId } from 'helpers/uniqueId';
-import DropdownMenu from './components/DropdownMenu';
-import Dropdown from './components/Dropdown';
-import s from './Design.css';
+import React from "react";
+import Section from "../../../../components/Section";
+import Grid from "../../../../components/Grid";
+import sGrid from "../../../../components/Grid/Grid.css";
+import Card from "../../../../components/Card";
+import CardOverlayToggle from "../../../../components/CardOverlayToggle";
+import { uniqueId } from "../../../../helpers/uniqueId";
+import DropdownMenu from "./components/DropdownMenu";
+import Dropdown from "./components/Dropdown";
+import s from "./Design.css";
 
 class Design extends React.Component {
   constructor() {
     super();
 
-    this.title = 'Design';
+    this.title = "Design";
 
     this.description = (
       <p>
-        Creating user interfaces starts with the design process. I work on creating
-        aesthetic appearances, strong typographic hierarchies, logical layouts and
-        pleasing interactions. I work closely with designers to make sure we focus
-        on maximising usability and user experience.
+        Creating user interfaces starts with the design process. I work on
+        creating aesthetic appearances, strong typographic hierarchies, logical
+        layouts and pleasing interactions. I work closely with designers to make
+        sure we focus on maximising usability and user experience.
       </p>
     );
 
     this.labels = [
-      'sketch',
-      'photoshop',
-      'illustrator',
-      'zeplin',
-      'typography',
-      'aesthetics',
-      'usability',
-      'animations',
-      'transitions',
-      'interactions',
-      'svg',
-      'pixel-densities'
+      "sketch",
+      "photoshop",
+      "illustrator",
+      "zeplin",
+      "typography",
+      "aesthetics",
+      "usability",
+      "animations",
+      "transitions",
+      "interactions",
+      "svg",
+      "pixel-densities",
     ];
 
     this.grid = [
       {
-        id: 'spinner',
+        id: "spinner",
         attributes: {
-          className: sGrid.areaSingle
+          className: sGrid.areaSingle,
         },
         content: (
           <Card className={s.cardSpinner}>
@@ -58,19 +58,20 @@ class Design extends React.Component {
               </div>
             </div>
             <div className={s.cardSpinnerDesc}>
-              Loading animation<br />
+              Loading animation
+              <br />
               with Simpl’s logo
             </div>
           </Card>
-        )
+        ),
       },
       {
-        id: 'dropdown-menu',
+        id: "dropdown-menu",
         attributes: {
           className: sGrid.areaDouble,
           style: { zIndex: 2 },
-          'data-fade-delay-media-md': 150,
-          'data-fade-delay-media-lg': 150
+          "data-fade-delay-media-md": 150,
+          "data-fade-delay-media-lg": 150,
         },
         content: (
           <Card className={s.cardDropdownMenu} colSpan={2}>
@@ -78,65 +79,65 @@ class Design extends React.Component {
               toggle="Dropdown menu"
               items={[
                 {
-                  value: 'Page one',
-                  href: './'
+                  value: "Page one",
+                  href: "./",
                 },
                 {
-                  value: 'Page two',
-                  href: './'
+                  value: "Page two",
+                  href: "./",
                 },
                 {
-                  value: 'Page three',
-                  href: './'
-                }
+                  value: "Page three",
+                  href: "./",
+                },
               ]}
             />
           </Card>
-        )
+        ),
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`,
+        },
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaMdOnly}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaMdOnly}`,
+        },
       },
       {
-        id: 'Typography',
+        id: "Typography",
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 300
+          "data-fade-delay-media-lg": 300,
         },
         content: (
           <Card className={s.cardTypography}>
             <div className={s.cardTypographyImage} />
           </Card>
-        )
+        ),
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`,
+        },
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaGtMdOnly}`,
+        },
       },
       {
-        id: 'checkout',
+        id: "checkout",
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-s': 150,
-          'data-fade-delay-media-md': 150,
-          'data-fade-delay-media-lg': 0
+          "data-fade-delay-media-s": 150,
+          "data-fade-delay-media-md": 150,
+          "data-fade-delay-media-lg": 0,
         },
         content: (
           <Card className={s.cardCheckout}>
@@ -144,58 +145,61 @@ class Design extends React.Component {
               <div className={s.cardCheckoutImage} />
             </div>
           </Card>
-        )
+        ),
       },
       {
-        id: 'dropdown',
+        id: "dropdown",
         attributes: {
           className: sGrid.areaDouble,
           style: { zIndex: 1 },
-          'data-fade-delay-media-lg': 150
+          "data-fade-delay-media-lg": 150,
         },
         content: (
           <Card className={s.cardDropdown} colSpan={2}>
             <Dropdown
               items={[
                 {
-                  value: 'Dropdown item'
+                  value: "Dropdown item",
                 },
                 {
-                  value: 'Ttem two',
-                  href: './'
+                  value: "Ttem two",
+                  href: "./",
                 },
                 {
-                  value: 'Ttem three',
-                  href: './'
+                  value: "Ttem three",
+                  href: "./",
                 },
                 {
-                  value: 'Ttem four',
-                  href: './'
-                }
+                  value: "Ttem four",
+                  href: "./",
+                },
               ]}
             />
           </Card>
-        )
+        ),
       },
       {
         id: uniqueId(),
         attributes: {
-          className: sGrid.areaSingle
-        }
+          className: sGrid.areaSingle,
+        },
       },
       {
-        id: 'transaction',
+        id: "transaction",
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-md': 150,
-          'data-fade-delay-media-lg': 300
+          "data-fade-delay-media-md": 150,
+          "data-fade-delay-media-lg": 300,
         },
         content: (
           <Card>
-            <CardOverlayToggle id="transaction" className={s.cardTransactionImage} />
+            <CardOverlayToggle
+              id="transaction"
+              className={s.cardTransactionImage}
+            />
           </Card>
-        )
-      }
+        ),
+      },
     ];
   }
 

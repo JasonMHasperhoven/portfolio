@@ -1,0 +1,84 @@
+@import "../../helpers/mediaQueries";
+@import "../../helpers/variables";
+
+.grid {
+  composes: clearfix from "../../helpers/clearfix.module.scss";
+}
+
+.area {
+  position: relative;
+  float: left;
+  height: 142px;
+  margin-right: $spacing / 4;
+  margin-bottom: $spacing * 1.5;
+
+  @include media-md {
+    height: 164px;
+  }
+
+  &MdOnly {
+    display: none;
+
+    @include media-md {
+      display: block;
+    }
+
+    @include media-lg {
+      display: none;
+    }
+  }
+
+  &MdAnythingBut {
+    display: block;
+
+    @include media-md {
+      display: none;
+    }
+
+    @include media-lg {
+      display: block;
+    }
+  }
+
+  &LtMdOnly {
+    display: block;
+
+    @include media-md {
+      display: none;
+    }
+  }
+
+  &GtMdOnly {
+    display: none;
+
+    @include media-md {
+      display: block;
+    }
+  }
+
+  &GtLgOnly {
+    display: none;
+
+    @include media-lg {
+      display: block;
+    }
+  }
+
+  &Single {
+    composes: area;
+    width: 142px;
+
+    @include media-md {
+      width: 164px;
+    }
+  }
+
+  &Double {
+    composes: area;
+    width: 288px;
+
+    @include media-md {
+      width: 332px;
+    }
+  }
+}

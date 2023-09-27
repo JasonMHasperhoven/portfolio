@@ -1,0 +1,112 @@
+@import "../../../../helpers/mediaQueries";
+@import "../../../../helpers/variables";
+
+.aboutMe {
+  margin-bottom: -110px;
+  background: linear-gradient(#030205, transparent);
+}
+
+.row {
+  composes: clearfix from "../../../../helpers/clearfix.module.scss";
+  margin-bottom: 134px;
+
+  @include media-md {
+    margin-bottom: 176px;
+  }
+}
+
+.content {
+  @include media-lg {
+    max-width: 50%;
+  }
+}
+
+.selfie {
+  margin-bottom: $spacing;
+
+  @include media-md {
+    margin-bottom: $spacing * 2;
+  }
+
+  @include media-lg {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.title {
+  composes: title from "../../../../components/Section/Section.module.scss";
+
+  &Sup {
+    composes: label from "../../../../components/Section/Section.module.scss";
+    position: relative;
+    top: -3px;
+  }
+}
+
+.desc {
+  margin-bottom: $spacing;
+
+  @include media-md {
+    margin-bottom: $spacing * 2;
+  }
+}
+
+.copy {
+  composes: textShadow from "../../../../components/Section/Section.module.scss";
+  max-width: 464px;
+
+  &Uppercase {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+
+    @include media-md {
+      font-size: 15px;
+    }
+  }
+
+  &Link {
+    color: #e84ba0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover {
+      color: #c3256c;
+      border-color: #c3256c;
+    }
+  }
+}
+
+.actions {
+  text-align: right;
+
+  @include media-md {
+    text-align: left;
+  }
+}
+
+.icon {
+  display: inline-block;
+  background: rgba(51, 0, 37, 0.3);
+  width: 48px;
+  height: 40px;
+  padding: 10px 0;
+  border-radius: 2px;
+  margin-right: 8px;
+  text-align: center;
+  transition: background 0.2s;
+  color: #fff;
+
+  @include media-md {
+    width: 56px;
+    height: 48px;
+    padding: 14px 0;
+  }
+
+  &:hover {
+    background: rgba(51, 0, 37, 0.7);
+  }
+}

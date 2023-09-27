@@ -1,45 +1,46 @@
-import React from 'react';
-import Section from 'components/Section';
-import Grid from 'components/Grid';
-import sGrid from 'components/Grid/Grid.css';
-import { uniqueId } from 'helpers/uniqueId';
-import Card from 'components/Card';
-import IconPlay from 'components/Icons/Play';
-import MusicPlayer from './components/MusicPlayer';
-import s from './Misc.css';
+import React from "react";
+import Section from "../../../../components/Section";
+import Grid from "../../../../components/Grid";
+import sGrid from "../../../../components/Grid/Grid.css";
+import { uniqueId } from "../../../../helpers/uniqueId";
+import Card from "../../../../components/Card";
+import IconPlay from "../../../../components/Icons/Play";
+import MusicPlayer from "./components/MusicPlayer";
+import s from "./Misc.css";
 
 class Misc extends React.Component {
   constructor() {
     super();
 
-    this.title = 'Miscellaneous';
+    this.title = "Miscellaneous";
 
     this.description = (
       <p>
-        I do creative as well as logical things. As long as we’re creating dreams,
-        I’m all in. I have an extensive background in music production, I have
-        experience with video editing and know how to handle a DSLR camera as well.
+        I do creative as well as logical things. As long as we’re creating
+        dreams, I’m all in. I have an extensive background in music production,
+        I have experience with video editing and know how to handle a DSLR
+        camera as well.
       </p>
     );
 
     this.labels = [
-      'cubase',
-      'logic pro',
-      'softube',
-      'fabfilter',
-      'u-he',
-      'atom',
-      'terminal',
-      'git',
-      'final cut pro',
-      'adobe after effects'
+      "cubase",
+      "logic pro",
+      "softube",
+      "fabfilter",
+      "u-he",
+      "atom",
+      "terminal",
+      "git",
+      "final cut pro",
+      "adobe after effects",
     ];
 
     this.grid = [
       {
-        id: 'execute',
+        id: "execute",
         attributes: {
-          className: sGrid.areaSingle
+          className: sGrid.areaSingle,
         },
         content: (
           <Card>
@@ -49,13 +50,13 @@ class Misc extends React.Component {
               className={s.execute}
             />
           </Card>
-        )
+        ),
       },
       {
-        id: 'lookbook',
+        id: "lookbook",
         attributes: {
           className: sGrid.areaDouble,
-          'data-fade-delay-media-md': 150
+          "data-fade-delay-media-md": 150,
         },
         content: (
           <Card colSpan={2}>
@@ -70,25 +71,25 @@ class Misc extends React.Component {
               </span>
             </a>
           </Card>
-        )
+        ),
       },
       {
         id: uniqueId(),
-        attributes: {
-          className: sGrid.areaSingle
-        }
-      },
-      {
-        id: uniqueId(),
-        attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaMdOnly}`
-        }
-      },
-      {
-        id: 'bordering',
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 300
+        },
+      },
+      {
+        id: uniqueId(),
+        attributes: {
+          className: `${sGrid.areaSingle} ${sGrid.areaMdOnly}`,
+        },
+      },
+      {
+        id: "bordering",
+        attributes: {
+          className: sGrid.areaSingle,
+          "data-fade-delay-media-lg": 300,
         },
         content: (
           <Card>
@@ -98,31 +99,31 @@ class Misc extends React.Component {
               className={s.bordering}
             />
           </Card>
-        )
+        ),
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`,
+        },
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`,
+        },
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaGtLgOnly}`,
+        },
       },
       {
-        id: 'lipsticks',
+        id: "lipsticks",
         attributes: {
           className: sGrid.areaDouble,
-          'data-fade-delay-media-md': 150
+          "data-fade-delay-media-md": 150,
         },
         content: (
           <Card colSpan={2}>
@@ -137,19 +138,19 @@ class Misc extends React.Component {
               </span>
             </a>
           </Card>
-        )
+        ),
       },
       {
         id: uniqueId(),
         attributes: {
-          className: `${sGrid.areaSingle} ${sGrid.areaMdAnythingBut}`
-        }
+          className: `${sGrid.areaSingle} ${sGrid.areaMdAnythingBut}`,
+        },
       },
       {
-        id: 'ha',
+        id: "ha",
         attributes: {
           className: sGrid.areaSingle,
-          'data-fade-delay-media-lg': 300
+          "data-fade-delay-media-lg": 300,
         },
         content: (
           <Card>
@@ -159,7 +160,7 @@ class Misc extends React.Component {
               className={s.ha}
             />
           </Card>
-        )
+        ),
       },
     ];
   }

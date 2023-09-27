@@ -1,1 +1,3 @@
-export default from './Selfie';
+import Selfie from "./Selfie";
+
+export default Selfie;

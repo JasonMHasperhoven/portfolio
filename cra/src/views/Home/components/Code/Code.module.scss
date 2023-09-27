@@ -1,0 +1,282 @@
+@import "../../../../helpers/mediaQueries";
+@import "../../../../helpers/variables";
+
+.githubRepo {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .githubRepoWrapper {
+      opacity: 1;
+    }
+  }
+
+  &Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 142px;
+    height: 142px;
+    background-size: 142px;
+
+    @include media-md {
+      width: 164px;
+      height: 164px;
+      background-size: 164px;
+    }
+  }
+
+  &Wrapper {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 142px;
+    height: 142px;
+    opacity: 0;
+    padding: $spacing * 0.75;
+    color: #fff;
+    font-size: 12px;
+    transition: opacity 0.5s;
+
+    @include media-md {
+      width: 164px;
+      height: 164px;
+      font-size: 13px;
+    }
+  }
+
+  &Title {
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    text-decoration: underline;
+
+    @include media-md {
+      font-size: 16px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &Icon {
+    width: 14px;
+    height: 14px;
+    position: relative;
+    top: 2px;
+
+    @include media-md {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.colorFunction {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url("./assets/color@1x.png");
+
+    @include media-pixel-ratio-double {
+      background-image: url("./assets/color@2x.png");
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, 0.8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #cc656e;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.multiModal {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    width: 288px;
+    background-image: url("./assets/multi-modal@1x.png");
+    background-size: 288px 142px;
+
+    @include media-md {
+      width: 332px;
+      background-size: 332px 164px;
+    }
+
+    @include media-pixel-ratio-double {
+      background-image: url("./assets/multi-modal@2x.png");
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    width: 288px;
+    background: rgba(4, 49, 34, 0.9);
+
+    @include media-md {
+      width: 332px;
+    }
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #19c587;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.railsModal {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url("./assets/rails-modal@1x.png");
+
+    @include media-pixel-ratio-double {
+      background-image: url("./assets/rails-modal@2x.png");
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, 0.8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #00d1c1;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.railsDropdownMenu {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url("./assets/dropdown-menu@1x.png");
+
+    @include media-pixel-ratio-double {
+      background-image: url("./assets/dropdown-menu@2x.png");
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, 0.8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #00d1c1;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.onTransitionEnd {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url("./assets/on-transition-end@1x.png");
+
+    @include media-pixel-ratio-double {
+      background-image: url("./assets/on-transition-end@2x.png");
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, 0.8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #eaca8f;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.portfolio {
+  composes: githubRepo;
+
+  &Image {
+    composes: githubRepoImage;
+    background-image: url("./assets/portfolio@1x.jpg");
+
+    @include media-pixel-ratio-double {
+      background-image: url("./assets/portfolio@2x.jpg");
+    }
+  }
+
+  &Wrapper {
+    composes: githubRepoWrapper;
+    background: rgba(43, 48, 59, 0.8);
+  }
+
+  &Title {
+    composes: githubRepoTitle;
+    color: #ce2176;
+  }
+
+  &Icon {
+    composes: githubRepoIcon;
+  }
+}
+
+.cardTechnologiesImage {
+  background-image: url("./assets/technologies@1x.png");
+
+  @include media-pixel-ratio-double {
+    background-image: url("./assets/technologies@2x.png");
+  }
+}
+
+.cardOptimizationImage {
+  background-image: url("./assets/optimization@1x.png");
+
+  @include media-pixel-ratio-double {
+    background-image: url("./assets/optimization@2x.png");
+  }
+}
+
+.cardSimplImage {
+  background-image: url("./assets/simpl@1x.png");
+
+  @include media-pixel-ratio-double {
+    background-image: url("./assets/simpl@2x.png");
+  }
+}
+
+.cardArticlesImage {
+  background-image: url("./assets/knowledge-is-power@1x.jpg");
+
+  @include media-pixel-ratio-double {
+    background-image: url("./assets/knowledge-is-power@2x.jpg");
+  }
+}
