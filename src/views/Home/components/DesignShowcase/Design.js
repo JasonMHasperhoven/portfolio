@@ -18,7 +18,10 @@ class Design extends React.Component {
     this.description = (
       <p>
         Below is a showcase of some of the designs that I worked on over the
-        years.
+        years. I work on creating aesthetic appearances, strong typographic
+        hierarchies, logical layouts and pleasing interactions. I deeply
+        understand the product development cycle and make sure we focus on
+        maximising usability and user experience in a streamlined manner.
       </p>
     );
 

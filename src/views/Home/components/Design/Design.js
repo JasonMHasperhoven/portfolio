@@ -13,14 +13,13 @@ class Design extends React.Component {
   constructor() {
     super();
 
-    this.title = "UI Components";
+    this.title = "UI Systems";
 
     this.description = (
       <p>
-        Creating user interfaces starts with the design process. I work on
-        creating aesthetic appearances, strong typographic hierarchies, logical
-        layouts and pleasing interactions. I work closely with engineers to make
-        sure we focus on maximising usability and user experience.
+        Creating consistent and cohesive user interfaces starts with a design
+        system. I work on reusable design components and guidelines, which saves
+        time and resources, and ensures design consistency.
       </p>
     );
 
