@@ -45,7 +45,7 @@ class OverlayTransaction extends React.Component {
         this.setState({ imgSrc: window.__imgid });
         window.__imgid = null;
       }
-    }, 1000);
+    }, 200);
   }
 
   componentWillUnmount() {
