@@ -2,7 +2,6 @@ import React from "react";
 import Overlay from "../../../../components/Overlay";
 import IconPlayCircle from "../../../../components/Icons/PlayCircle";
 import s from "./OverlayTransaction.module.scss";
-import d from "../../../../helpers/dispatch";
 
 const sleep = (period) => new Promise((resolve) => setTimeout(resolve, period));
 
